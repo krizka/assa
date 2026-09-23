@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.className+=" js";</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Программа «Первый шаг» и Банк интеллектуальных тренировок — АССА</title>
+<meta name="description" content="Программа практик и упражнений для начинающих и Банк интеллектуальных тренировок: марафоны, медитации, тематические вечера, медиатека.">
+<meta property="og:title" content="Программа «Первый шаг» и Банк интеллектуальных тренировок — АССА">
+<meta property="og:description" content="Программа практик и упражнений для начинающих и Банк интеллектуальных тренировок: марафоны, медитации, тематические вечера, медиатека.">
+<meta property="og:image" content="images/header.jpg">
+<link rel="icon" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/config.js"></script>
+</head>
+<body>
+<!-- ============ ШАПКА ============ -->
+<header class="topbar">
+  <div class="topbar__inner">
+    <div class="topbar__left">
+      <button class="btn-gold btn-menu" id="menuBtn" aria-expanded="false" aria-controls="mainMenu">
+        <span class="btn-menu__label">МЕНЮ</span>
+      </button>
+      <ul class="socials" aria-label="Мы в социальных сетях">
+        <li><a class="social social--yt" href="https://www.youtube.com/@ASSAALVA" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.9a3 3 0 0 0-2.1-2.1C19.5 4.3 12 4.3 12 4.3s-7.5 0-9.4.5A3 3 0 0 0 .5 6.9C0 8.8 0 12 0 12s0 3.2.5 5.1a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.1.5-5.1s0-3.2-.5-5.1zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></a></li>
+        <li><a class="social social--vk" href="https://vk.com/academiya_alva" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.2 17.9c-5.5 0-8.9-3.9-9-10.3h2.8c.1 4.8 2.3 6.8 3.9 7.2V7.6h2.6v4c1.6-.2 3.3-2 3.9-4h2.6c-.4 2.5-2.2 4.3-3.4 5 1.2.6 3.2 2.2 4 5.3h-2.9c-.6-1.9-2.1-3.4-4.2-3.6v3.6h-.3z"/></svg></a></li>
+        <li><a class="social social--ok" href="https://ok.ru/" target="_blank" rel="noopener" aria-label="Одноклассники"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 11.6a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-7.2a2.2 2.2 0 1 0 0 4.4 2.2 2.2 0 0 0 0-4.4zM14.4 17l2.6 2.6a1.4 1.4 0 0 1-2 2L12.4 19 9.9 21.6a1.4 1.4 0 1 1-2-2L10.5 17a8.4 8.4 0 0 1-2.9-1.2 1.4 1.4 0 1 1 1.5-2.4 5.9 5.9 0 0 0 6.3 0 1.4 1.4 0 1 1 1.5 2.4 8.4 8.4 0 0 1-2.5 1.1z"/></svg></a></li>
+        <li><a class="social social--tg" href="https://t.me/ASSALVA" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.9 19c-.2 1-.8 1.3-1.7.8l-4.6-3.4-2.2 2.1c-.3.3-.5.5-1 .5l.3-4.6 8.4-7.6c.4-.3-.1-.5-.6-.2L7.2 12.1l-4.4-1.4c-1-.3-1-1 .2-1.4l17.3-6.7c.8-.3 1.5.2 1.2 1.7z"/></svg></a></li>
+      </ul>
+    </div>
+
+    <a class="brand" href="index.html" aria-label="АССА — на главную">
+      <img src="images/logo.png" alt="Герб Академии Сферического Сознания Альва" width="142" height="142">
+    </a>
+
+    <div class="topbar__right">
+      <div class="phones" data-phones>
+        <span class="phones__title">Номера телефона:</span>
+        <a href="tel:+78356376973">+7 8356376973</a>
+        <a href="tel:+78356376973">+7 8356376973</a>
+      </div>
+      <a class="btn-gold btn-account" href="#cabinet" data-lms="cabinet">ЛИЧНЫЙ КАБИНЕТ</a>
+    </div>
+  </div>
+
+  <!-- выпадающее меню -->
+  <nav class="menu-panel" id="mainMenu" hidden aria-label="Главное меню">
+    <ul>
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="about.html">Об Академии<small>история, концепция, обучение</small></a></li>
+      <li><a href="school.html">Школа 9 ступеней<small>основная программа</small></a></li>
+      <li><a href="first-step.html">Первый шаг<small>и Банк интеллектуальных тренировок</small></a></li>
+      <li><a href="practice.html">Практика<small>индивидуально и в Кругах</small></a></li>
+      <li><a href="programs.html">Открытые программы<small>марафоны, тематические вечера</small></a></li>
+      <li><a href="yoga.html">Мир йоги<small>Энийога — русская йога</small></a></li>
+      <li><a href="club.html">Альва Клуб<small>проекты клуба и участников</small></a></li>
+      <li><a href="team.html">Преподаватели и кураторы</a></li>
+      <li><a href="contacts.html">Контакты и ресурсы</a></li>
+    </ul>
+    <div class="menu-panel__phones" data-phones>
+      <span>Номера телефона:</span>
+      <a href="tel:+78356376973">+7 8356376973</a>
+      <a href="tel:+78356376973">+7 8356376973</a>
+    </div>
+  </nav>
+</header>
+<!-- ============ ШАПКА-ГЕРОЙ ============ -->
+<section class="hero page-hero" id="top">
+  <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero__scrim" aria-hidden="true"></div>
+  <div class="crumbs"><a href="index.html">Главная</a><span>/</span>Первый шаг</div>
+  <div class="hero__content">
+    <h1 class="hero__title">Первые шаги</h1>
+    <p class="hero__subtitle"><span>Программа «Первый шаг» и Банк интеллектуальных тренировок</span></p>
+  </div>
+  <div class="hero__foot" aria-hidden="true">
+    <svg viewBox="0 0 1440 190" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="gCream" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#f6e3bd"/><stop offset=".5" stop-color="#fdf4e2"/><stop offset="1" stop-color="#f2d9ac"/>
+        </linearGradient>
+      </defs>
+      <g class="drift drift--40">
+        <path fill="url(#gCream)" opacity=".85"
+              d="M-120,96 c240,-34 480,-34 720,0 c240,34 480,34 720,0 c240,-34 480,-34 720,0 c240,34 480,34 720,0 c240,-34 480,-34 720,0 c240,34 480,34 720,0 L4200,200 L-120,200 Z"/>
+      </g>
+      <g class="drift drift--28 drift--rev">
+        <path fill="#ffffff"
+              d="M-120,142 c240,26 480,26 720,0 c240,-26 480,-26 720,0 c240,26 480,26 720,0 c240,-26 480,-26 720,0 c240,26 480,26 720,0 c240,-26 480,-26 720,0 L4200,200 L-120,200 Z"/>
+      </g>
+    </svg>
+    <canvas class="fx" data-fx="dust" aria-hidden="true"></canvas>
+  </div>
+  <a class="btn-start" href="https://t.me/+dp9LznAwrnpkNTYy">ВСТУПИТЬ В ГРУППУ</a>
+</section>
+
+<section class="intro reveal">
+  <p class="lines">
+    <span class="ln">Программа практик и упражнений для тех, кто делает первый шаг</span>
+    <span class="ln">к восстановлению целостности своего сознания.</span>
+  </p>
+</section>
+
+<section class="block" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="pill reveal reveal--pill">ПРОГРАММА «ПЕРВЫЙ ШАГ»</h2>
+    <div class="split split--media-left split--top">
+      <div class="circle-wrap reveal reveal--left" data-tilt>
+        <div class="circle circle--dark circle--img">
+          <img src="images/tg/39b7ce6b0aa277a89c286.jpg" alt="Первый шаг" loading="lazy" onerror="this.remove()">
+        </div>
+      </div>
+      <div class="split__text reveal">
+        <div class="prose">
+          <p>«Первый шаг» – одна из трех основных обучающих программ Академии наряду со <a href="school.html">Школой 9 ступеней</a> и <a href="programs.html">курсами</a>. Это программа практик и упражнений, с которой мы рекомендуем начинать знакомство с методом Академии: групповой формат, поддержка тренера и кураторов, презентации и ответы на любые вопросы.</p>
+          <p>В группе программы вы найдете всю информацию по программе, сможете посмотреть презентации и задать любой вопрос.</p>
+          <p>Эвотренер программы – <a href="team.html">Оле Мир</a>, куратор Школы 9 ступеней и Амбассадор Школы Сферического Сознания.</p>
+        </div>
+        <div class="cta" style="justify-content:flex-start">
+          <a class="btn-gold btn-lg" href="https://t.me/+dp9LznAwrnpkNTYy" target="_blank" rel="noopener" data-lms-course="firststep" data-fallback="https://t.me/+dp9LznAwrnpkNTYy">ГРУППА ПРОГРАММЫ</a>
+        </div>
+      </div>
+    </div>
+    <div class="gallery reveal" style="margin-top:clamp(30px,4vw,60px)">
+      <a href="images/tg/39b7ce6b0aa277a89c286.jpg" target="_blank" rel="noopener"><img src="images/tg/39b7ce6b0aa277a89c286.jpg" alt="Программа Первый шаг" loading="lazy"></a>
+      <a href="images/tg/07ab6a196e15400e1b2b3.jpg" target="_blank" rel="noopener"><img src="images/tg/07ab6a196e15400e1b2b3.jpg" alt="Программа Первый шаг" loading="lazy"></a>
+      <a href="images/tg/d944858e08f654fc76c9a.jpg" target="_blank" rel="noopener"><img src="images/tg/d944858e08f654fc76c9a.jpg" alt="Программа Первый шаг" loading="lazy"></a>
+      <a href="images/tg/2980e233d6e63239be906.jpg" target="_blank" rel="noopener"><img src="images/tg/2980e233d6e63239be906.jpg" alt="Программа Первый шаг" loading="lazy"></a>
+      <a href="images/tg/eb31595a2f5852e4a0004.jpg" target="_blank" rel="noopener"><img src="images/tg/eb31595a2f5852e4a0004.jpg" alt="Программа Первый шаг" loading="lazy"></a>
+      <a href="images/tg/d1b6bb40d6fcb5aee7d14.jpg" target="_blank" rel="noopener"><img src="images/tg/d1b6bb40d6fcb5aee7d14.jpg" alt="Программа Первый шаг" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+<div class="wave-sep" aria-hidden="true" style="background:linear-gradient(90deg,#2386b6,#243168)">
+  <svg viewBox="0 0 1440 130" preserveAspectRatio="none">
+    <g class="drift drift--52"><path fill="none" stroke="#f4e0b6" stroke-width="22" stroke-linecap="round" opacity=".9" d="M-120,86 c240,30 480,30 720,0 c240,-30 480,-30 720,0 c240,30 480,30 720,0 c240,-30 480,-30 720,0 c240,30 480,30 720,0 c240,-30 480,-30 720,0"/></g>
+    <g class="drift drift--38 drift--rev"><path fill="#ffffff" d="M-120,64 c240,-30 480,-30 720,0 c240,30 480,30 720,0 c240,-30 480,-30 720,0 c240,30 480,30 720,0 c240,-30 480,-30 720,0 c240,30 480,30 720,0 L4200,-10 L-120,-10 Z"/></g>
+  </svg>
+  <canvas class="fx" data-fx="dust" aria-hidden="true"></canvas>
+</div>
+
+<section class="block block--blue" style="padding-top:clamp(30px,4vw,60px)">
+  <div class="wrap">
+    <h2 class="pill reveal reveal--pill">БАНК ИНТЕЛЛЕКТУАЛЬНЫХ ТРЕНИРОВОК</h2>
+    <div class="split split--media-right split--top">
+      <div class="split__text reveal">
+        <div class="prose prose--on-blue">
+          <p>Здесь Вы легко найдете любой материал со всех каналов и ресурсов Академии. Ссылки на марафоны, информация по различным тренировкам, записи Тематических вечеров и Медитаций.</p>
+          <p>Что входит в Банк:</p>
+          <ul class="checks">
+            <li>ссылки на все марафоны Академии и их дайджесты;</li>
+            <li>информация по различным тренировкам;</li>
+            <li>записи Тематических вечеров;</li>
+            <li>Медитации;</li>
+            <li>архив предыдущих тренировок и медитаций в рамках майянских тренировок;</li>
+            <li>информация по календарю Майя;</li>
+            <li>материалы «Лесного купания» (лесные ванны);</li>
+            <li>Медиатека с фильмами;</li>
+            <li>книги, рекомендованные Учителем.</li>
+          </ul>
+          <div class="note note--blue"><strong>Доступ к Банку интеллектуальных тренировок открывается всем участникам программы «Первый Шаг»</strong> и ученикам Школы 9 ступеней.</div>
+        </div>
+      </div>
+      <div class="circle-wrap reveal reveal--right" data-tilt>
+        <div class="circle circle--light circle--img">
+          <img src="images/tg/70d41b6c2005f6fa0d60e.jpg" alt="Банк интеллектуальных тренировок" loading="lazy" onerror="this.remove()">
+        </div>
+      </div>
+    </div>
+    <div class="cta">
+      <a class="btn-gold btn-lg" href="https://t.me/+dp9LznAwrnpkNTYy" target="_blank" rel="noopener" data-lms-course="bank" data-fallback="https://t.me/+dp9LznAwrnpkNTYy">ПОЛУЧИТЬ ДОСТУП</a>
+      <a class="btn-outline" href="programs.html">Открытые программы</a>
+    </div>
+  </div>
+</section>
+<div class="wave-sep" aria-hidden="true" style="background:linear-gradient(90deg,#2386b6,#243168)">
+  <svg viewBox="0 0 1440 130" preserveAspectRatio="none">
+    <g class="drift drift--56 drift--rev"><path fill="none" stroke="#f2ddb2" stroke-width="22" stroke-linecap="round" opacity=".9" d="M-120,48 c240,-30 480,-30 720,0 c240,30 480,30 720,0 c240,-30 480,-30 720,0 c240,30 480,30 720,0 c240,-30 480,-30 720,0 c240,30 480,30 720,0"/></g>
+    <g class="drift drift--36"><path fill="#ffffff" d="M-120,80 c240,30 480,30 720,0 c240,-30 480,-30 720,0 c240,30 480,30 720,0 c240,-30 480,-30 720,0 c240,30 480,30 720,0 c240,-30 480,-30 720,0 L4200,140 L-120,140 Z"/></g>
+  </svg>
+  <canvas class="fx" data-fx="dust" aria-hidden="true"></canvas>
+</div>
+
+<!-- ============ ЗАВЕРШАЮЩАЯ ПОЛОСА ============ -->
+<div class="closing" aria-hidden="true">
+  <div class="closing__bg"></div>
+  <canvas class="fx" data-fx="rich"></canvas>
+  <div class="closing__top">
+    <svg viewBox="0 0 1440 190" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="gCreamEnd" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#f0d9ab"/><stop offset=".5" stop-color="#fdf4e2"/><stop offset="1" stop-color="#f4dfb4"/>
+        </linearGradient>
+      </defs>
+      <g class="drift drift--40 drift--rev">
+        <path fill="url(#gCreamEnd)" opacity=".9" d="M-120,108 c240,-30 480,-30 720,0 c240,30 480,30 720,0 c240,-30 480,-30 720,0 c240,30 480,30 720,0 c240,-30 480,-30 720,0 c240,30 480,30 720,0 L4200,-10 L-120,-10 Z"/>
+      </g>
+      <g class="drift drift--28">
+        <path fill="#ffffff" d="M-120,62 c240,24 480,24 720,0 c240,-24 480,-24 720,0 c240,24 480,24 720,0 c240,-24 480,-24 720,0 c240,24 480,24 720,0 c240,-24 480,-24 720,0 L4200,-10 L-120,-10 Z"/>
+      </g>
+    </svg>
+  </div>
+</div>
+<!-- ============ ПОДВАЛ ============ -->
+<footer class="footer" id="contacts">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand">
+          <img src="images/logo.png" alt="">
+          <div><b>АССА</b><small>Академия Сферического Сознания Альва</small></div>
+        </div>
+        <p>Уникальная система знаний, связывающая все процессы и явления в ЕДИНОЕ ЦЕЛОЕ. Практики, методики, техники саморегуляции, дающие возможность самовосстановления в любой ситуации.</p>
+        <p>Работаем с 1983 года.</p>
+        <ul class="socials" aria-label="Мы в социальных сетях">
+        <li><a class="social social--yt" href="https://www.youtube.com/@ASSAALVA" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.9a3 3 0 0 0-2.1-2.1C19.5 4.3 12 4.3 12 4.3s-7.5 0-9.4.5A3 3 0 0 0 .5 6.9C0 8.8 0 12 0 12s0 3.2.5 5.1a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.1.5-5.1s0-3.2-.5-5.1zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></a></li>
+        <li><a class="social social--vk" href="https://vk.com/academiya_alva" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.2 17.9c-5.5 0-8.9-3.9-9-10.3h2.8c.1 4.8 2.3 6.8 3.9 7.2V7.6h2.6v4c1.6-.2 3.3-2 3.9-4h2.6c-.4 2.5-2.2 4.3-3.4 5 1.2.6 3.2 2.2 4 5.3h-2.9c-.6-1.9-2.1-3.4-4.2-3.6v3.6h-.3z"/></svg></a></li>
+        <li><a class="social social--ok" href="https://ok.ru/" target="_blank" rel="noopener" aria-label="Одноклассники"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 11.6a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-7.2a2.2 2.2 0 1 0 0 4.4 2.2 2.2 0 0 0 0-4.4zM14.4 17l2.6 2.6a1.4 1.4 0 0 1-2 2L12.4 19 9.9 21.6a1.4 1.4 0 1 1-2-2L10.5 17a8.4 8.4 0 0 1-2.9-1.2 1.4 1.4 0 1 1 1.5-2.4 5.9 5.9 0 0 0 6.3 0 1.4 1.4 0 1 1 1.5 2.4 8.4 8.4 0 0 1-2.5 1.1z"/></svg></a></li>
+        <li><a class="social social--tg" href="https://t.me/ASSALVA" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.9 19c-.2 1-.8 1.3-1.7.8l-4.6-3.4-2.2 2.1c-.3.3-.5.5-1 .5l.3-4.6 8.4-7.6c.4-.3-.1-.5-.6-.2L7.2 12.1l-4.4-1.4c-1-.3-1-1 .2-1.4l17.3-6.7c.8-.3 1.5.2 1.2 1.7z"/></svg></a></li>
+      </ul>
+      </div>
+      <div>
+        <h4>Разделы</h4>
+        <ul>
+          <li><a href="about.html">Об Академии</a></li>
+          <li><a href="school.html">Школа 9 ступеней</a></li>
+          <li><a href="first-step.html">Первый шаг</a></li>
+          <li><a href="practice.html">Практика</a></li>
+          <li><a href="programs.html">Открытые программы</a></li>
+          <li><a href="yoga.html">Мир йоги</a></li>
+          <li><a href="club.html">Альва Клуб</a></li>
+          <li><a href="team.html">Преподаватели и кураторы</a></li>
+          <li><a href="contacts.html">Контакты и ресурсы</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Обучение</h4>
+        <ul>
+          <li><a href="https://t.me/skola9stupeney" target="_blank" rel="noopener">Канал Школы 9 ступеней</a></li>
+          <li><a href="https://t.me/+a6d9EoQYwIRjYmIy" target="_blank" rel="noopener">Группа набора в Школу</a></li>
+          <li><a href="https://t.me/+dp9LznAwrnpkNTYy" target="_blank" rel="noopener">Группа программы «Первый шаг»</a></li>
+          <li><a href="https://t.me/eniyoga" target="_blank" rel="noopener">Группа Энийоги</a></li>
+          <li><a href="#cabinet" data-lms="cabinet">Личный кабинет ученика</a></li>
+          <li><a href="#start" data-lms="start">Начать обучение</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <p>Главный учитель — Ирина Владимировна Савельева<br><a href="https://t.me/Irina_Savelyeva" target="_blank" rel="noopener">@Irina_Savelyeva</a></p>
+        <p>Кураторы: <a href="https://t.me/Katyakh2023" target="_blank" rel="noopener">@Katyakh2023</a>, <a href="https://t.me/KondratyevEV" target="_blank" rel="noopener">@KondratyevEV</a></p>
+        <p>Канал Академии: <a href="https://t.me/ASSALVA" target="_blank" rel="noopener">t.me/ASSALVA</a><br>Альва Клуб: <a href="https://t.me/ALVACLUB" target="_blank" rel="noopener">t.me/ALVACLUB</a></p>
+        <div data-phones><a href="tel:+78356376973">+7 8356376973</a></div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 1983–2026 Академия Сферического Сознания Альва (АССА)</span>
+      <span>Мы не лекари, не врачи, не скорая помощь. Мы работаем с сознанием человека.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

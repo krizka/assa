@@ -671,7 +671,7 @@ ul{list-style:none;margin:0;padding:0;}
   letter-spacing:.03em;
   color:#245b8f;
 }
-.prose ul,.prose ol{margin:0 0 1.2em;padding-left:1.4em;}
+.prose ul,.prose ol{margin:0 0 1.2em;padding-left:1.4em;text-align:left;}
 .prose ul{list-style:none;padding-left:0;}
 .prose ul li{position:relative;padding-left:1.7em;margin:.4em 0;}
 .prose ul li::before{
@@ -789,7 +789,7 @@ ul{list-style:none;margin:0;padding:0;}
   display:inline-flex;align-items:center;gap:.5em;
   transition:gap .3s,color .3s;
 }
-.card__link::after{content:'→';}
+.card__link::after{content:'\2192';}
 .card:hover .card__link{gap:.9em;color:var(--navy-deep);}
 a.card{cursor:pointer;}
 .card--cream{background:linear-gradient(160deg,#fffdf8,#fbf1de);}
@@ -827,7 +827,7 @@ a.card{cursor:pointer;}
 .checks{margin:0;padding:0;list-style:none;text-align:left;}
 .checks li{position:relative;padding-left:2.2em;margin:.7em 0;}
 .checks li::before{
-  content:'✓';
+  content:'\2713';
   position:absolute;left:0;top:-.05em;
   width:1.55em;height:1.55em;border-radius:50%;
   display:grid;place-items:center;
@@ -907,6 +907,9 @@ a.card{cursor:pointer;}
   font-size:14px;letter-spacing:.06em;color:#28a8e9;
 }
 .person-card__tg svg{width:18px;height:18px;fill:currentColor;}
+.person-card__links{margin-top:auto;padding-top:.8em;display:flex;flex-wrap:wrap;justify-content:center;gap:.4em 1.6em;}
+.person-card__links .person-card__tg{margin-top:0;padding-top:0;}
+.person-card__vk{color:#2787f5;}
 
 /* --- галерея --- */
 .gallery{
@@ -1080,6 +1083,7 @@ a.card{cursor:pointer;}
 .circle-wrap.circle-wrap--wide{width:min(100%,900px);}
 .circle-wrap.circle-wrap--mid{width:min(80%,512px);}
 @media (max-width:600px){.circle-wrap.circle-wrap--mid{width:100%;}}
+.circle-wrap.circle-wrap--narrow{width:min(80%,380px);}
 .circle--rect{aspect-ratio:auto;display:block;border-radius:clamp(14px,2vw,26px);}
 .circle--rect img{height:auto;display:block;}
 
@@ -1097,3 +1101,58 @@ a.card{cursor:pointer;}
   animation:heroIn 1.5s cubic-bezier(.2,.7,.3,1) both;
 }
 .page-hero .hero__content:has(.hero__badge){transform:translate(-50%,-30%);}
+
+/* --- картинка поменьше: 50% ширины, на телефоне во всю ширину --- */
+.circle-wrap.circle-wrap--half{width:min(50%,450px);}
+@media (max-width:600px){.circle-wrap.circle-wrap--half{width:100%;}}
+
+/* --- картинка в карточке на 80% ширины, по центру --- */
+.card--img.card--img-sm{padding-top:clamp(22px,2.4vw,34px);}
+.card--img-sm .card__img{width:80%;margin:0 auto .6em;border-radius:16px;}
+
+/* --- обложка видео со ссылкой --- */
+.video-card{
+  position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(10px,1.4vw,18px);
+  max-width:900px;margin:0 auto;aspect-ratio:16/9;padding:24px;border-radius:clamp(14px,2vw,26px);overflow:hidden;
+  text-align:center;color:#fff;
+  background:
+    radial-gradient(60% 70% at 80% 15%,rgba(252,237,194,.35),rgba(252,237,194,0) 60%),
+    radial-gradient(55% 70% at 15% 90%,rgba(35,134,182,.6),rgba(35,134,182,0) 70%),
+    linear-gradient(135deg,#151f62 0%,#243168 45%,#245b8f 80%,#2386b6 100%);
+  box-shadow:0 20px 46px rgba(16,32,86,.3);
+  transition:transform .45s cubic-bezier(.2,.7,.3,1),box-shadow .45s ease;
+}
+.video-card:hover{transform:translateY(-6px);box-shadow:0 28px 60px rgba(16,32,86,.38);}
+.video-card__logo{position:absolute;top:clamp(14px,2vw,26px);left:clamp(14px,2vw,26px);width:clamp(54px,8vw,96px);height:auto;
+  padding:4px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px rgba(252,237,194,.7);}
+.video-card__play{
+  width:clamp(64px,9vw,104px);aspect-ratio:1/1;border-radius:50%;
+  background:linear-gradient(180deg,#fbeacb 0%,#f4cea0 55%,#eebf88 100%);
+  box-shadow:0 0 0 3px rgba(45,120,175,.8),0 12px 30px rgba(8,18,55,.45);
+  display:grid;place-items:center;transition:transform .35s ease;
+}
+.video-card__play::after{content:'';margin-left:12%;border-style:solid;border-width:14px 0 14px 24px;border-color:transparent transparent transparent var(--navy);}
+.video-card:hover .video-card__play{transform:scale(1.08);}
+.video-card__title{font-family:var(--font-head);font-size:clamp(18px,2.4vw,32px);letter-spacing:.03em;line-height:1.2;}
+.video-card__meta{font-size:clamp(13px,1.2vw,16px);color:#dbe7f5;max-width:34em;}
+@media (max-width:520px){.video-card{aspect-ratio:auto;min-height:260px;padding-top:80px;}}
+
+/* --- без горизонтальной прокрутки, пока блоки с reveal--right въезжают справа --- */
+html,body{overflow-x:clip;}
+
+/* --- картинка в цветах сайта: градиент синий-голубой-золото поверх фото --- */
+.circle--tint::after{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(22% 34% at 50% 34%,rgba(242,203,156,.95),rgba(242,203,156,0) 100%),
+    radial-gradient(20% 40% at 50% 72%,rgba(238,191,136,.8),rgba(238,191,136,0) 100%),
+    linear-gradient(172deg,#151f62 0%,#243168 22%,#2373a5 48%,#c9a06a 72%,#eebf88 100%);
+  mix-blend-mode:color;
+}
+
+/* --- кураторы программы --- */
+.curators__title{margin:clamp(34px,4vw,56px) 0 clamp(16px,2vw,24px);text-align:center;font-family:var(--font-head);font-weight:400;
+  font-size:clamp(17px,1.6vw,22px);letter-spacing:.08em;text-transform:uppercase;color:var(--navy);}
+/* два кружка на одной карточке, чуть внахлест */
+.avatar-pair{display:flex;justify-content:center;}
+.avatar-pair .avatar + .avatar{margin-left:clamp(-28px,-2.4vw,-18px);}

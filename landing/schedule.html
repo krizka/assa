@@ -10,9 +10,6 @@
 <meta property="og:description" content="Расписание Академии, календарь встреч, запись к Учителю и кураторам.">
 <meta property="og:image" content="https://alva.club/images/og.jpg">
 <link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48 64x64 128x128 256x256" href="/favicon.ico?v=20261018">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/orders.css?v=20261019-schedule3">
 <link rel="stylesheet" href="css/home-about.css?v=20261018b">
@@ -20,6 +17,7 @@
 
 <link rel="stylesheet" href="css/schedule.css?v=20261019-schedule3">
 <link rel="stylesheet" href="css/site-structure.css?v=20261019-navlight1">
+<link rel="stylesheet" href="css/masthead.css?v=20261019-seamless2">
 </head>
 <body class="page-schedule">
 <header class="topbar">
@@ -70,7 +68,26 @@
 </header>
 <nav class="site-nav" aria-label="Основные разделы"><div class="site-nav__inner"><a href="index.html">Об Академии</a><a href="training.html">Обучение и курсы</a><a href="schedule.html" aria-current="page">Расписание и события</a><a href="practice.html">Практика</a><a href="team.html">Команда и кураторы</a><a href="club.html">Альва Клуб</a><a href="contacts.html">Контакты</a></div></nav>
 <main>
-<section class="schedule-hero"><div class="wrap"><p class="schedule-eyebrow">Жизнь Академии</p><h1>Расписание<br><span>и события</span></h1><p class="schedule-lead">Встречи, обучение и практика — в одном пространстве.<br>Выберите событие или запишитесь к специалисту.</p><nav class="schedule-tabs" aria-label="Разделы расписания"><a href="#events">События Академии</a><a href="#appointments">Личная запись</a></nav></div></section>
+<section class="schedule-hero"><canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas><div class="wrap"><p class="schedule-eyebrow">Жизнь Академии</p><h1>Расписание<br><span>и события</span></h1><p class="schedule-lead">Встречи, обучение и практика — в одном пространстве.<br>Выберите событие или запишитесь к специалисту.</p><nav class="schedule-tabs" aria-label="Разделы расписания"><a href="#events">События Академии</a><a href="#appointments">Личная запись</a></nav></div><div class="hero__foot" aria-hidden="true">
+    <svg viewBox="0 0 1440 190" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="gCream" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#f6e3bd"/><stop offset=".5" stop-color="#fdf4e2"/><stop offset="1" stop-color="#f2d9ac"/>
+        </linearGradient>
+      </defs>
+      <g class="drift drift--40">
+        <path fill="url(#gCream)" opacity=".85"
+              d="M-120,96 c240,-34 480,-34 720,0 c240,34 480,34 720,0 c240,-34 480,-34 720,0 c240,34 480,34 720,0 c240,-34 480,-34 720,0 c240,34 480,34 720,0 L4200,200 L-120,200 Z"/>
+      </g>
+      <g class="drift drift--28 drift--rev">
+        <path fill="#ffffff"
+              d="M-120,142 c240,26 480,26 720,0 c240,-26 480,-26 720,0 c240,26 480,26 720,0 c240,-26 480,-26 720,0 c240,26 480,26 720,0 c240,-26 480,-26 720,0 L4200,200 L-120,200 Z"/>
+      </g>
+    </svg>
+    <canvas class="fx" data-fx="dust" aria-hidden="true"></canvas>
+  </div>
+
+  </section>
 <section class="block schedule-events" id="events"><div class="wrap"><div class="schedule-section-heading"><div><p class="schedule-eyebrow">Учимся и встречаемся</p><h2>Календарь Академии</h2></div><a class="btn-outline" href="https://academy.alva.club/event-calendar" data-school-calendar target="_blank" rel="noopener">Календарь в школе ↗</a></div><p class="schedule-section-note">Открытые события — для знакомства с Академией. Встречи ваших учебных групп доступны в календаре школы после входа.</p>
 <div class="agenda-layout"><div class="agenda-list"><div class="agenda-filters" role="group" aria-label="Направление события"><button type="button" data-event-category="all" aria-pressed="true">Все</button><button type="button" data-event-category="school" aria-pressed="false">Школа</button><button type="button" data-event-category="firststep" aria-pressed="false">Первый шаг</button><button type="button" data-event-category="circle" aria-pressed="false">Круги</button><button type="button" data-event-category="eniyoga" aria-pressed="false">Энийога</button><button type="button" data-event-category="open" aria-pressed="false">Открытые встречи</button></div><h3 class="agenda-list__heading" id="events-heading">Ближайшие события</h3><div id="public-events" aria-live="polite"></div><noscript><p>Посмотрите актуальные встречи в <a href="https://academy.alva.club/event-calendar">календаре школы</a>.</p></noscript></div>
 <div class="agenda-calendar"><div class="agenda-calendar__nav"><button type="button" data-month-step="-1" aria-label="Предыдущий месяц">‹</button><h3 id="calendar-month" aria-live="polite"></h3><button type="button" data-month-step="1" aria-label="Следующий месяц">›</button></div><div class="agenda-weekdays" aria-hidden="true"><span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span></div><div class="agenda-days" id="calendar-days" role="group" aria-label="Дни месяца"></div><button class="agenda-reset" type="button" id="calendar-reset">Ближайшие события</button><p class="agenda-timezone">Время событий: Москва, UTC+3</p></div></div></div></section>

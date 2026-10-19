@@ -549,6 +549,7 @@
 
   /* кнопки «Личный кабинет» / «Начать обучение» */
   var cab = url(C.lms.cabinet), start = url(C.lms.start);
+  if (start === '#start') start = 'training.html#start';
   Array.prototype.forEach.call(document.querySelectorAll('[data-lms="cabinet"]'), function (a) { if (cab) a.href = cab; });
   Array.prototype.forEach.call(document.querySelectorAll('[data-lms="start"]'), function (a) { if (start) a.href = start; });
 
@@ -583,6 +584,6 @@
   var here = location.pathname.split('/').pop() || 'index.html';
   Array.prototype.forEach.call(document.querySelectorAll('.menu-panel a'), function (a) {
     var h = (a.getAttribute('href') || '').split('#')[0];
-    if (h && h === here) a.classList.add('is-active');
+    if ((h && h === here) || (h === 'https://alva.club/' && here === 'index.html')) { a.classList.add('is-active'); a.setAttribute('aria-current', 'page'); }
   });
 })();

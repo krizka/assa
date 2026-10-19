@@ -1,7 +1,7 @@
 #!/bin/sh
 # Заливает landing/ на сервер под пользователем alva. Запуск из любой папки:
 #   sh scripts/deploy.sh
-# --delete удаляет на сервере файлы, которых нет в landing/.
+# Серверные файлы сохраняются: удаление при обычной публикации не выполняется.
 # .well-known исключен, чтобы не трогать проверки certbot.
 # Папка сайта на сервере: владелец alva, группа www-data, setgid на папках,
 # поэтому новые файлы сами получают группу www-data. Владельца и группу
@@ -13,9 +13,12 @@ HOST=alva@85.198.108.229
 DEST=/var/www/alva.club
 SRC="$(cd "$(dirname "$0")/../landing" && pwd)"
 
-rsync -rltvz --delete \
+rsync -rltvz \
   --exclude '.DS_Store' \
   --exclude '.well-known' \
+  --exclude '*.docx' \
+  --exclude '*prompts.json' \
+  --exclude 'data/calendar.json' \
   "$SRC/" "$HOST:$DEST/"
 
 # Папкам ставим 750: числовой режим у GNU chmod сохраняет setgid на папках.

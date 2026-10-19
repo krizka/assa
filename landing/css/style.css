@@ -130,9 +130,9 @@ ul{list-style:none;margin:0;padding:0;}
   width:clamp(56px,5.4vw,82px);
   height:auto;
   border-radius:50%;
-  /* мягко растворяем квадратный фон герба в фоне шапки */
-  -webkit-mask-image:radial-gradient(circle at 50% 50%,#000 62%,transparent 74%);
-  mask-image:radial-gradient(circle at 50% 50%,#000 62%,transparent 74%);
+  display:block;
+  object-fit:contain;
+  object-position:center;
 }
 .brand:hover{transform:scale(1.07) rotate(-2deg);}
 
@@ -1019,9 +1019,7 @@ a.card{cursor:pointer;}
   grid-template-columns:1.3fr 1fr 1fr 1fr;
 }
 .footer__brand{display:flex;align-items:center;gap:16px;margin-bottom:14px;}
-.footer__brand img{width:64px;height:64px;border-radius:50%;
-  -webkit-mask-image:radial-gradient(circle at 50% 50%,#000 62%,transparent 74%);
-  mask-image:radial-gradient(circle at 50% 50%,#000 62%,transparent 74%);}
+.footer__brand img{display:block;width:64px;height:64px;flex:0 0 64px;border-radius:50%;object-fit:contain;object-position:center;}
 .footer__brand b{font-family:var(--font-head);font-weight:400;font-size:20px;letter-spacing:.06em;color:#fff;display:block;}
 .footer__brand small{display:block;font-size:13px;letter-spacing:.03em;}
 .footer h4{
@@ -1156,3 +1154,14 @@ html,body{overflow-x:clip;}
 /* два кружка на одной карточке, чуть внахлест */
 .avatar-pair{display:flex;justify-content:center;}
 .avatar-pair .avatar + .avatar{margin-left:clamp(-28px,-2.4vw,-18px);}
+
+/* Legal navigation and merchant identity on every page. */
+.footer__legal{display:flex;flex-wrap:wrap;gap:14px 26px;margin-top:34px;padding-top:26px;border-top:1px solid rgba(255,255,255,.18);font-size:15px;line-height:1.5;}
+.footer__legal a{text-decoration:underline;text-underline-offset:4px;}
+.footer__legal a:focus-visible{outline:2px solid var(--gold-light);outline-offset:5px;}
+.footer__requisites{margin-top:22px;}
+.footer__requisites p{font-size:14px;overflow-wrap:anywhere;}
+
+/* Preserve the full teacher portrait inside its circular frame. */
+.teacher-portrait{aspect-ratio:1;border-radius:50%;}
+.teacher-portrait img{object-fit:contain;object-position:center;}

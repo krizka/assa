@@ -1,0 +1,74 @@
+.schedule-eyebrow{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:#67718c;margin:0 0 16px}
+.schedule-hero{position:relative;overflow:hidden;padding:180px 0 64px;background:radial-gradient(ellipse at 85% 22%,#e7d3ae70,transparent 42%),linear-gradient(135deg,#f9f6ee,#fff 55%,#eaf2f6);border-bottom:1px solid #e4e5e5}
+.schedule-hero:after{content:"";position:absolute;width:430px;height:430px;border:1px solid #c6ae7f66;border-radius:50%;right:-70px;top:96px;box-shadow:0 0 0 50px #c6ae7f12,0 0 0 100px #c6ae7f08;pointer-events:none}
+.schedule-hero .wrap{position:relative;z-index:1}
+.schedule-hero h1{font-family:var(--font-head);font-size:clamp(42px,6vw,74px);font-weight:400;line-height:1.08;letter-spacing:-.03em;margin:0 0 24px;max-width:800px}
+.schedule-hero h1 span{color:#387c9b}
+.schedule-lead{font-size:clamp(17px,2vw,21px);line-height:1.6;max-width:650px;margin:0}
+.schedule-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-top:34px}
+.schedule-tabs a{border:1px solid #d3d8df;background:#fff;border-radius:28px;padding:12px 22px;text-decoration:none;font-size:15px}
+.schedule-tabs a:first-child{color:#fff;background:var(--navy);border-color:var(--navy)}
+.schedule-events,.schedule-appointments{scroll-margin-top:105px}
+.schedule-section-heading{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:22px}
+.schedule-section-heading h2{font-family:var(--font-head);font-weight:400;letter-spacing:-.02em;font-size:clamp(28px,3.5vw,44px);line-height:1.2;margin:0}
+.schedule-section-heading .schedule-eyebrow{margin-bottom:12px}
+.schedule-section-heading>.btn-outline{white-space:normal;text-align:center;flex-shrink:0;font-size:13px}
+.schedule-section-note{color:#626c86;max-width:760px;font-size:17px;line-height:1.6;margin:0 0 34px}
+.agenda-layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:36px;align-items:start}
+.agenda-calendar{padding:24px;border:1px solid #e0dfd8;border-radius:24px;background:#fffdf8;position:sticky;top:110px}
+.agenda-calendar__nav{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:18px}
+.agenda-calendar__nav h3{font-family:var(--font-head);font-size:18px;font-weight:400;margin:0;text-transform:capitalize}
+.agenda-calendar__nav button{border:1px solid #dde1e9;background:white;color:var(--navy);border-radius:50%;width:34px;height:34px;cursor:pointer;font-size:26px;line-height:1}
+.agenda-weekdays,.agenda-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;text-align:center}
+.agenda-weekdays{color:#78819a;font-size:12px;margin-bottom:8px}
+.agenda-days button{position:relative;aspect-ratio:1;border:1px solid transparent;border-radius:50%;background:transparent;font:15px var(--font-body);color:var(--navy);cursor:pointer;padding:0;min-width:0}
+.agenda-days button:hover{background:#f0e3cb}
+.agenda-days button[aria-current="date"]{border-color:#b69862}
+.agenda-days button[aria-pressed="true"]{background:var(--navy);color:white}
+.agenda-days button.has-events:after{content:"";position:absolute;width:4px;height:4px;border-radius:50%;background:#ac8b50;bottom:4px;left:calc(50% - 2px)}
+.agenda-reset{border:0;background:transparent;color:#2f7899;text-decoration:underline;text-underline-offset:4px;font:14px var(--font-body);padding:0;margin-top:20px;cursor:pointer}
+.agenda-timezone{font-size:12px;color:#78819a;margin:16px 0 0}
+.agenda-filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px}
+.agenda-filters button{font:14px var(--font-body);color:var(--navy);background:#fff;border:1px solid #dbe0e8;border-radius:22px;padding:9px 15px;cursor:pointer}
+.agenda-filters button[aria-pressed="true"]{background:#253361;color:#fff;border-color:#253361}
+.agenda-list__heading{font-family:var(--font-head);font-weight:400;font-size:21px;margin:0 0 20px}
+.agenda-empty{border:1px solid #e2e5eb;border-radius:24px;padding:clamp(24px,4vw,42px);background:linear-gradient(140deg,#f7fafb,#fffdf7);min-height:250px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.agenda-empty__mark{width:46px;height:46px;display:grid;place-items:center;border:1px solid #d7bf91;border-radius:14px;margin-bottom:24px;color:#a68a54;font-size:26px}
+.agenda-empty h4{font-family:var(--font-head);font-size:24px;font-weight:400;margin:0 0 12px;max-width:440px;line-height:1.35}
+.agenda-empty p{font-size:16px;line-height:1.6;color:#606b85;max-width:480px;margin:0 0 22px}
+.agenda-empty a{color:#2e7190;text-underline-offset:5px;font-size:15px}
+.event-card{display:grid;grid-template-columns:76px minmax(0,1fr);gap:22px;border:1px solid #e0e3e9;background:white;border-radius:22px;padding:26px;margin-bottom:16px}
+.event-card__date{color:#3a7290;border-right:1px solid #e4e5e8;padding-right:18px;text-align:center;font-size:13px;text-transform:uppercase}
+.event-card__date strong{display:block;font:36px var(--font-head);line-height:1.1;margin-bottom:6px}
+.event-card h4{font:22px var(--font-head);margin:8px 0 12px}
+.event-card p{font-size:15px;line-height:1.6;color:#626c86;margin:0 0 14px}
+.event-card__meta{font-size:12px;color:#69718b;letter-spacing:.03em}
+.event-card a{color:#28758f;font-size:15px;text-underline-offset:4px}
+.booking-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;list-style:none;padding:0;margin:36px 0 24px}
+.booking-steps li{display:flex;gap:16px;border-top:1px solid #d4c9b4;padding-top:22px}
+.booking-steps li>span{font:22px var(--font-head);color:#a28750}
+.booking-steps h3{font:19px var(--font-head);margin:0 0 10px}
+.booking-steps p{font-size:15px;line-height:1.6;margin:0;color:#636d85}
+.booking-status{font-size:15px;line-height:1.7;color:#626b83;margin:24px 0 32px;padding:16px 20px;background:#ffffff99;border-left:2px solid #bfa06d}
+.specialists-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.specialist-card{display:flex;gap:22px;align-items:flex-start;background:white;border:1px solid #e4dfd4;padding:26px;border-radius:24px;box-shadow:0 10px 24px #192b5210}
+.specialist-card img{width:100px;height:100px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.specialist-card:first-child{grid-column:1/-1;padding:32px}
+.specialist-card:first-child img{width:140px;height:140px}
+.specialist-card__body{flex:1;min-width:0}
+.specialist-card h3{font:23px var(--font-head);margin:0 0 12px;line-height:1.3}
+.specialist-card .schedule-eyebrow{font-size:10px;margin-bottom:10px}
+.specialist-card__note{font-size:14px;color:#6c7488;line-height:1.6;margin:0 0 18px}
+.specialist-card a{font-size:12px;white-space:normal;text-align:center;justify-content:center;letter-spacing:.03em}
+.schedule-teaser{padding:26px 0 44px}
+.schedule-teaser__card{display:flex;justify-content:space-between;align-items:center;gap:34px;padding:32px 38px;border:1px solid #e2d7c3;border-radius:26px;background:linear-gradient(125deg,#faf5e9,#f3f8fa)}
+.schedule-teaser h2{font:clamp(26px,3vw,36px) var(--font-head);margin:0 0 14px}
+.schedule-teaser p{font-size:16px;line-height:1.6;color:#67718b;margin:0}
+.schedule-teaser .schedule-eyebrow{font-size:11px;margin-bottom:10px}
+.schedule-teaser__actions{display:flex;flex-direction:column;gap:12px;flex-shrink:0}
+.schedule-teaser__actions a{font-size:12px;white-space:normal;text-align:center;justify-content:center}
+.schedule-mini-event{display:block;margin:8px 0;font-size:15px;text-underline-offset:3px}
+.schedule-mini-event time{color:#9b7d47;margin-right:10px}
+.schedule-tabs a:focus-visible,.agenda-layout button:focus-visible{outline:3px solid #4286a2;outline-offset:4px}
+@media(max-width:1000px){.agenda-layout{grid-template-columns:minmax(0,1fr) 280px;gap:24px}.agenda-calendar{padding:18px}.specialist-card{flex-direction:column}.specialist-card:first-child{flex-direction:row}}
+@media(max-width:700px){.schedule-hero{padding:200px 0 48px}.schedule-hero:after{right:-280px}.schedule-hero h1{font-size:44px}.schedule-section-heading{flex-direction:column;align-items:flex-start}.schedule-events,.schedule-appointments{scroll-margin-top:180px}.agenda-layout{grid-template-columns:1fr}.agenda-calendar{position:static;max-width:370px;width:100%;margin:0 auto;padding:22px}.agenda-filters{gap:7px}.booking-steps{grid-template-columns:1fr;gap:18px}.booking-steps li{padding-top:16px}.specialists-grid{grid-template-columns:1fr}.specialist-card,.specialist-card:first-child{padding:24px;flex-direction:column;grid-column:auto}.specialist-card img,.specialist-card:first-child img{width:96px;height:96px}.specialist-card a{width:100%}.schedule-teaser__card{flex-direction:column;align-items:stretch;padding:26px}.schedule-teaser__actions{width:100%}.event-card{grid-template-columns:56px minmax(0,1fr);padding:20px;gap:16px}.event-card__date{padding-right:12px}.event-card h4{font-size:20px}}

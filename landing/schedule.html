@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.className+=" js";</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Расписание и события — АССА</title>
+<meta name="description" content="Расписание Академии, календарь встреч, запись к Учителю и кураторам.">
+<meta property="og:title" content="Расписание и события — АССА">
+<meta property="og:description" content="Расписание Академии, календарь встреч, запись к Учителю и кураторам.">
+<meta property="og:image" content="https://alva.club/images/og.jpg">
+<link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48 64x64 128x128 256x256" href="/favicon.ico?v=20261018">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/orders.css?v=20261019-schedule3">
+<link rel="stylesheet" href="css/home-about.css?v=20261018b">
+<script src="js/config.js?v=20261019-release1"></script>
+
+<link rel="stylesheet" href="css/schedule.css?v=20261019-schedule3">
+<link rel="stylesheet" href="css/site-structure.css?v=20261019-navlight1">
+</head>
+<body class="page-schedule">
+<header class="topbar">
+  <div class="topbar__inner">
+    <div class="topbar__left">
+      <button class="btn-gold btn-menu" id="menuBtn" aria-expanded="false" aria-controls="mainMenu">
+        <span class="btn-menu__label">МЕНЮ</span>
+      </button>
+      <ul class="socials" aria-label="Мы в социальных сетях">
+        <li><a class="social social--yt" href="https://www.youtube.com/@ASSAALVA" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.9a3 3 0 0 0-2.1-2.1C19.5 4.3 12 4.3 12 4.3s-7.5 0-9.4.5A3 3 0 0 0 .5 6.9C0 8.8 0 12 0 12s0 3.2.5 5.1a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.1.5-5.1s0-3.2-.5-5.1zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></a></li>
+        <li><a class="social social--vk" href="https://vk.com/academiya_alva" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.2 17.9c-5.5 0-8.9-3.9-9-10.3h2.8c.1 4.8 2.3 6.8 3.9 7.2V7.6h2.6v4c1.6-.2 3.3-2 3.9-4h2.6c-.4 2.5-2.2 4.3-3.4 5 1.2.6 3.2 2.2 4 5.3h-2.9c-.6-1.9-2.1-3.4-4.2-3.6v3.6h-.3z"/></svg></a></li>
+        <li><a class="social social--ok" href="https://ok.ru/" target="_blank" rel="noopener" aria-label="Одноклассники"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 11.6a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-7.2a2.2 2.2 0 1 0 0 4.4 2.2 2.2 0 0 0 0-4.4zM14.4 17l2.6 2.6a1.4 1.4 0 0 1-2 2L12.4 19 9.9 21.6a1.4 1.4 0 1 1-2-2L10.5 17a8.4 8.4 0 0 1-2.9-1.2 1.4 1.4 0 1 1 1.5-2.4 5.9 5.9 0 0 0 6.3 0 1.4 1.4 0 1 1 1.5 2.4 8.4 8.4 0 0 1-2.5 1.1z"/></svg></a></li>
+        <li><a class="social social--tg" href="https://t.me/ASSALVA" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.9 19c-.2 1-.8 1.3-1.7.8l-4.6-3.4-2.2 2.1c-.3.3-.5.5-1 .5l.3-4.6 8.4-7.6c.4-.3-.1-.5-.6-.2L7.2 12.1l-4.4-1.4c-1-.3-1-1 .2-1.4l17.3-6.7c.8-.3 1.5.2 1.2 1.7z"/></svg></a></li>
+      </ul>
+    </div>
+
+    <a class="brand" href="index.html" aria-label="АССА — на главную">
+      <img src="images/brand/academy.webp?v=20261017"alt="Герб Академии Сферического Сознания Альва" width="142" height="142">
+    </a>
+
+    <div class="topbar__right">
+      <div class="phones" data-phones>
+        <span class="phones__title">Номера телефона:</span>
+        <a href="tel:+78356376973">+7 8356376973</a>
+        <a href="tel:+78356376973">+7 8356376973</a>
+      </div>
+      <a class="btn-gold btn-account" href="#cabinet" data-lms="cabinet">ЛИЧНЫЙ КАБИНЕТ</a>
+    </div>
+  </div>
+
+  <!-- выпадающее меню -->
+  <nav class="menu-panel" id="mainMenu" hidden aria-label="Главное меню">
+    <ul>
+      <li><a href="https://alva.club/">Главная · Об Академии<small>история, концепция, Учитель</small></a></li>
+      <li><a href="training.html">Обучение и курсы<small>все направления Академии</small></a><ul class="menu-panel__courses"><li><a href="school.html">Школа 9 ступеней</a></li><li><a href="first-step.html">Первый шаг</a></li><li><a href="programs.html">Открытые программы</a></li><li><a href="yoga.html">Энийога</a></li></ul></li>
+      <li><a href="schedule.html">Расписание и события<small>встречи и запись к специалистам</small></a></li>
+      <li><a href="practice.html">Практика<small>индивидуально и в Кругах</small></a></li>
+      <li><a href="club.html">Альва Клуб<small>проекты клуба и участников</small></a></li>
+      <li><a href="team.html">Команда и кураторы</a></li>
+      <li><a href="contacts.html">Контакты и ресурсы</a></li>
+    </ul>
+    <div class="menu-panel__phones" data-phones>
+      <span>Номера телефона:</span>
+      <a href="tel:+78356376973">+7 8356376973</a>
+      <a href="tel:+78356376973">+7 8356376973</a>
+    </div>
+  </nav>
+</header>
+<nav class="site-nav" aria-label="Основные разделы"><div class="site-nav__inner"><a href="index.html">Об Академии</a><a href="training.html">Обучение и курсы</a><a href="schedule.html" aria-current="page">Расписание и события</a><a href="practice.html">Практика</a><a href="team.html">Команда и кураторы</a><a href="club.html">Альва Клуб</a><a href="contacts.html">Контакты</a></div></nav>
+<main>
+<section class="schedule-hero"><div class="wrap"><p class="schedule-eyebrow">Жизнь Академии</p><h1>Расписание<br><span>и события</span></h1><p class="schedule-lead">Встречи, обучение и практика — в одном пространстве.<br>Выберите событие или запишитесь к специалисту.</p><nav class="schedule-tabs" aria-label="Разделы расписания"><a href="#events">События Академии</a><a href="#appointments">Личная запись</a></nav></div></section>
+<section class="block schedule-events" id="events"><div class="wrap"><div class="schedule-section-heading"><div><p class="schedule-eyebrow">Учимся и встречаемся</p><h2>Календарь Академии</h2></div><a class="btn-outline" href="https://academy.alva.club/event-calendar" data-school-calendar target="_blank" rel="noopener">Календарь в школе ↗</a></div><p class="schedule-section-note">Открытые события — для знакомства с Академией. Встречи ваших учебных групп доступны в календаре школы после входа.</p>
+<div class="agenda-layout"><div class="agenda-list"><div class="agenda-filters" role="group" aria-label="Направление события"><button type="button" data-event-category="all" aria-pressed="true">Все</button><button type="button" data-event-category="school" aria-pressed="false">Школа</button><button type="button" data-event-category="firststep" aria-pressed="false">Первый шаг</button><button type="button" data-event-category="circle" aria-pressed="false">Круги</button><button type="button" data-event-category="eniyoga" aria-pressed="false">Энийога</button><button type="button" data-event-category="open" aria-pressed="false">Открытые встречи</button></div><h3 class="agenda-list__heading" id="events-heading">Ближайшие события</h3><div id="public-events" aria-live="polite"></div><noscript><p>Посмотрите актуальные встречи в <a href="https://academy.alva.club/event-calendar">календаре школы</a>.</p></noscript></div>
+<div class="agenda-calendar"><div class="agenda-calendar__nav"><button type="button" data-month-step="-1" aria-label="Предыдущий месяц">‹</button><h3 id="calendar-month" aria-live="polite"></h3><button type="button" data-month-step="1" aria-label="Следующий месяц">›</button></div><div class="agenda-weekdays" aria-hidden="true"><span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span></div><div class="agenda-days" id="calendar-days" role="group" aria-label="Дни месяца"></div><button class="agenda-reset" type="button" id="calendar-reset">Ближайшие события</button><p class="agenda-timezone">Время событий: Москва, UTC+3</p></div></div></div></section>
+<section class="block block--cream schedule-appointments" id="appointments"><div class="wrap"><div class="schedule-section-heading"><div><p class="schedule-eyebrow">Личная работа</p><h2>Запись к Учителю<br>и кураторам</h2></div><a class="btn-outline" href="practice.html#consultation-prices">Форматы и стоимость</a></div><ol class="booking-steps"><li><span>01</span><div><h3>Специалист и время</h3><p>Выберите специалиста и подходящий свободный слот.</p></div></li><li><span>02</span><div><h3>Оплата</h3><p>Проверьте формат, стоимость и время встречи.</p></div></li><li><span>03</span><div><h3>Подтверждение</h3><p>Запись подтверждается после успешной оплаты.</p></div></li></ol><p class="booking-status">Пока часы приёма не опубликованы, согласуйте время со специалистом. Бесплатная первичная работа — по записи без оплаты.</p><div class="specialists-grid"><article class="specialist-card"><img src="images/generated/teacher-irina-portrait.webp" alt="Ирина Владимировна Савельева" width="240" height="240" loading="lazy"><div class="specialist-card__body"><p class="schedule-eyebrow">Учитель Академии</p><h3>Ирина Владимировна Савельева</h3><p class="specialist-card__note">Для учеников Академии; условия работы — по необходимости.</p><a class="btn-outline" href="https://t.me/Irina_Savelyeva" data-offer="consultation.teacher" data-specialist="irina" data-order-mode="booking">Согласовать время</a></div></article><article class="specialist-card"><img src="images/team/ekaterina-khmeleva.webp" alt="Екатерина Хмелева" width="240" height="240" loading="lazy"><div class="specialist-card__body"><p class="schedule-eyebrow">Куратор · директор</p><h3>Екатерина Хмелева</h3><p class="specialist-card__note">Доступность и подходящий формат согласуйте со специалистом.</p><a class="btn-outline" href="https://t.me/Katyakh2023" data-offer="consultation.first" data-specialist="ekaterina" data-order-mode="booking">Согласовать время</a></div></article><article class="specialist-card"><img src="images/team/olga-mir.webp" alt="Ольга Мир" width="240" height="240" loading="lazy"><div class="specialist-card__body"><p class="schedule-eyebrow">Куратор Школы · эвотренер «Первого шага»</p><h3>Ольга Мир</h3><p class="specialist-card__note">Доступность и подходящий формат согласуйте со специалистом.</p><a class="btn-outline" href="https://t.me/olemirbraun" data-offer="consultation.first" data-specialist="olga" data-order-mode="booking">Согласовать время</a></div></article><article class="specialist-card"><img src="images/team/eduard-kondratyev.webp" alt="Эдуард Кондратьев" width="240" height="240" loading="lazy"><div class="specialist-card__body"><p class="schedule-eyebrow">Бизнес-консультант · куратор Школы</p><h3>Эдуард Кондратьев</h3><p class="specialist-card__note">Доступность и подходящий формат согласуйте со специалистом.</p><a class="btn-outline" href="https://t.me/KondratyevEV" data-offer="consultation.first" data-specialist="eduard" data-order-mode="booking">Согласовать время</a></div></article><article class="specialist-card"><img src="images/team/ekaterina-ivanovskaya.jpg" alt="Екатерина Ивановская" width="240" height="240" loading="lazy"><div class="specialist-card__body"><p class="schedule-eyebrow">Тренер Энийоги</p><h3>Екатерина Ивановская</h3><p class="specialist-card__note">Доступность и подходящий формат согласуйте со специалистом.</p><a class="btn-outline" href="https://t.me/katyagalani" data-offer="eniyoga.class" data-specialist="yoga" data-order-mode="booking">Согласовать время</a></div></article></div><div class="cta"><a class="btn-outline" href="team.html">Познакомиться с командой</a><a class="btn-outline" href="contacts.html">Помощь с записью</a></div></div></section>
+</main>
+<footer class="footer" id="contacts">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand">
+          <img src="images/brand/academy.webp?v=20261017"alt="">
+          <div><b>АССА</b><small>Академия Сферического Сознания Альва</small></div>
+        </div>
+        <p>Уникальная система знаний, связывающая все процессы и явления в ЕДИНОЕ ЦЕЛОЕ. Практики, методики, техники саморегуляции, дающие возможность самовосстановления в любой ситуации.</p>
+        <p>Работаем с 1983 года.</p>
+        <ul class="socials" aria-label="Мы в социальных сетях">
+        <li><a class="social social--yt" href="https://www.youtube.com/@ASSAALVA" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.9a3 3 0 0 0-2.1-2.1C19.5 4.3 12 4.3 12 4.3s-7.5 0-9.4.5A3 3 0 0 0 .5 6.9C0 8.8 0 12 0 12s0 3.2.5 5.1a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.1.5-5.1s0-3.2-.5-5.1zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></a></li>
+        <li><a class="social social--vk" href="https://vk.com/academiya_alva" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.2 17.9c-5.5 0-8.9-3.9-9-10.3h2.8c.1 4.8 2.3 6.8 3.9 7.2V7.6h2.6v4c1.6-.2 3.3-2 3.9-4h2.6c-.4 2.5-2.2 4.3-3.4 5 1.2.6 3.2 2.2 4 5.3h-2.9c-.6-1.9-2.1-3.4-4.2-3.6v3.6h-.3z"/></svg></a></li>
+        <li><a class="social social--ok" href="https://ok.ru/" target="_blank" rel="noopener" aria-label="Одноклассники"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 11.6a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-7.2a2.2 2.2 0 1 0 0 4.4 2.2 2.2 0 0 0 0-4.4zM14.4 17l2.6 2.6a1.4 1.4 0 0 1-2 2L12.4 19 9.9 21.6a1.4 1.4 0 1 1-2-2L10.5 17a8.4 8.4 0 0 1-2.9-1.2 1.4 1.4 0 1 1 1.5-2.4 5.9 5.9 0 0 0 6.3 0 1.4 1.4 0 1 1 1.5 2.4 8.4 8.4 0 0 1-2.5 1.1z"/></svg></a></li>
+        <li><a class="social social--tg" href="https://t.me/ASSALVA" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.9 19c-.2 1-.8 1.3-1.7.8l-4.6-3.4-2.2 2.1c-.3.3-.5.5-1 .5l.3-4.6 8.4-7.6c.4-.3-.1-.5-.6-.2L7.2 12.1l-4.4-1.4c-1-.3-1-1 .2-1.4l17.3-6.7c.8-.3 1.5.2 1.2 1.7z"/></svg></a></li>
+      </ul>
+      </div>
+      <div>
+        <h4>Разделы</h4>
+        <ul>
+          <li><a href="index.html">Об Академии</a></li>
+          <li><a href="training.html">Обучение и курсы</a></li>
+          <li><a href="schedule.html">Расписание и события</a></li>
+          <li><a href="school.html">Школа 9 ступеней</a></li>
+          <li><a href="first-step.html">Первый шаг</a></li>
+          <li><a href="practice.html">Практика</a></li>
+          <li><a href="programs.html">Открытые программы</a></li>
+          <li><a href="yoga.html">Мир йоги</a></li>
+          <li><a href="club.html">Альва Клуб</a></li>
+          <li><a href="team.html">Команда и кураторы</a></li>
+          <li><a href="contacts.html">Контакты и ресурсы</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Обучение</h4>
+        <ul>
+          <li><a href="https://t.me/skola9stupeney" target="_blank" rel="noopener">Канал Школы 9 ступеней</a></li>
+          <li><a href="https://t.me/+a6d9EoQYwIRjYmIy" target="_blank" rel="noopener">Группа набора в Школу</a></li>
+          <li><a href="https://t.me/+dp9LznAwrnpkNTYy" target="_blank" rel="noopener">Группа программы «Первый шаг»</a></li>
+          <li><a href="https://t.me/eniyoga" target="_blank" rel="noopener">Группа Энийоги</a></li>
+          <li><a href="#cabinet" data-lms="cabinet">Личный кабинет ученика</a></li>
+          <li><a href="training.html#start">Начать обучение</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <p>Главный учитель — Ирина Владимировна Савельева<br><a href="https://t.me/Irina_Savelyeva" target="_blank" rel="noopener">@Irina_Savelyeva</a></p>
+        <p>Кураторы: <a href="https://t.me/Katyakh2023" target="_blank" rel="noopener">@Katyakh2023</a>, <a href="https://t.me/KondratyevEV" target="_blank" rel="noopener">@KondratyevEV</a>, <a href="https://t.me/olemirbraun" target="_blank" rel="noopener">Ольга Мир · @olemirbraun</a></p>
+        <p>Канал Академии: <a href="https://t.me/ASSALVA" target="_blank" rel="noopener">t.me/ASSALVA</a><br>Альва Клуб: <a href="https://t.me/ALVACLUB" target="_blank" rel="noopener">t.me/ALVACLUB</a></p>
+        <div data-phones><a href="tel:+78356376973">+7 8356376973</a></div>
+      </div>
+    </div>
+    <nav class="footer__legal" aria-label="Правовая информация"><a href="offer.html">Публичная оферта</a><a href="privacy.html">Политика обработки персональных данных</a><a href="consent.html">Согласие на обработку персональных данных</a><a href="refunds.html">Правила возврата денежных средств</a><a href="requisites.html">Контакты и реквизиты</a></nav>
+<div class="footer__requisites"><p>ИП Савельева Ирина Владимировна · ИНН 771800076413 · ОГРНИП 304770000590283</p><p><a href="mailto:isavel77@gmail.com">isavel77@gmail.com</a> · <a href="tel:+79169007790">+7 916 900-77-90</a></p></div>
+    <div class="footer__bottom">
+      <span>© 1983–2026 Академия Сферического Сознания Альва (АССА)</span>
+      <span>Мы не лекари, не врачи, не скорая помощь. Мы работаем с сознанием человека.</span>
+    </div>
+  </div>
+</footer><script src="js/main.js?v=20261019-structure1"></script>
+<script src="js/nav-motion.js?v=20261019-navlight1"></script><script src="js/orders.js?v=20261019-schedule3"></script><script src="js/schedule.js?v=20261019-schedule3"></script></body></html>

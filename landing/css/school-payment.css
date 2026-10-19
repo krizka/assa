@@ -1,0 +1,20 @@
+.school-payment{scroll-margin-top:160px;}
+.school-payment__intro{max-width:740px;margin:0 auto 32px;text-align:center;font-size:18px;}
+.school-payment__heading{font-family:var(--font-head);font-weight:400;font-size:clamp(22px,2.4vw,30px);text-align:center;margin:46px 0 24px;}
+.school-payment__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;}
+.school-payment__card{text-align:left;gap:16px;}
+.school-payment__price{font-family:var(--font-head);font-size:clamp(26px,3vw,36px);margin:0;}
+.school-payment__price span{font-family:var(--font-body);font-size:15px;display:block;margin-top:4px;color:#52608d;}
+.school-payment__card>a{margin-top:auto;}
+.school-payment__card .btn-gold,.school-payment__card .btn-outline{width:100%;text-align:center;justify-content:center;font-size:13px;letter-spacing:.03em;white-space:normal;}
+.school-payment__pair{border-top:1px solid rgba(36,47,103,.14);padding-top:16px;}
+.school-payment__pair p{margin:0 0 12px;font-size:15px;}
+.school-payment__pair strong{display:block;margin-top:6px;font-family:var(--font-head);font-size:22px;font-weight:400;}
+.school-payment__annual{display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:24px;}
+.school-payment__annual .card__title{margin:0 0 12px;}
+.school-payment__annual>a{flex-shrink:0;text-align:center;white-space:normal;}
+.school-payment__note{font-size:15px;text-align:center;max-width:800px;margin:24px auto 0;line-height:1.6;}
+@media(max-width:1000px){.school-payment__grid{grid-template-columns:repeat(2,minmax(0,1fr));}.school-payment__annual{flex-direction:column;text-align:center;}}
+@media(max-width:600px){.school-payment__grid{grid-template-columns:1fr;}.school-payment__annual>a{width:100%;}.school-payment{scroll-margin-top:200px;}}
+
+.school-payment__heading[id]{scroll-margin-top:200px;}

@@ -1,0 +1,126 @@
+/* Shared site hierarchy: Academy → learning → events and practice. */
+.topbar,.topbar.is-stuck{position:relative;inset:auto;padding:10px 0;background:#142358;box-shadow:none}
+.brand img{width:90px;height:90px}
+.site-nav{position:sticky;top:0;z-index:55;background:#fffdf9;border-bottom:1px solid #e3ded3;box-shadow:0 5px 18px #14235808}
+.site-nav__inner{display:flex;justify-content:center;gap:4px;max-width:1200px;margin:auto;padding:7px 20px}
+.site-nav a{display:flex;align-items:center;justify-content:center;min-height:42px;padding:10px 18px;border-radius:24px;color:#253765;font-family:var(--font-head);font-size:15px;text-decoration:none;text-align:center;line-height:1.25;transition:background .2s,color .2s}
+.site-nav a:hover{background:#f2e9d7}
+.site-nav a[aria-current],.site-nav a.is-current-section{background:#182c60;color:#fff}
+.site-nav a:focus-visible,.about-sections a:focus-visible,.next-grid a:focus-visible{outline:3px solid #b88737;outline-offset:3px}
+.menu-panel__courses{margin:0 12px 8px 26px;padding-left:12px;border-left:1px solid #fff3}
+.menu-panel .menu-panel__courses a{padding:8px 12px;font-size:13px;letter-spacing:.02em}
+.menu-panel .menu-panel__courses li+li{border:0}
+.hero{height:clamp(400px,35vw,520px)}
+.page-hero{height:clamp(330px,30vw,440px)}
+.hero__eyebrow{margin:0 0 18px;color:#f6deb0;font-size:13px;letter-spacing:.16em;text-transform:uppercase}
+.page-home .hero__title{font-size:clamp(62px,9vw,126px)}
+.hero__content{transform:translate(-50%,-58%)}
+.page-hero .hero__content,.page-hero .hero__content:has(.hero__badge){transform:translate(-50%,-55%)}
+.crumbs{top:22px;padding:0 20px;font-size:11px;line-height:1.8}
+.hero .btn-start{max-width:calc(100% - 36px);text-align:center;white-space:normal;line-height:1.4}
+.page-home .intro{padding:65px 24px 18px}
+.about-sections{padding-top:24px}
+.page-about section[id],.page-training section[id],.block[id],.sec[id]{scroll-margin-top:90px}
+.page-home .about-history{padding-top:42px}
+.page-home .sec--teacher{background:#fcf7ed;padding-bottom:60px}
+.page-home .sec--teacher .lines--right{text-align:left}
+.page-home .sec--teacher .cta{justify-content:flex-start!important}
+.page-home .about-learning>.wrap>.cta{margin-top:32px}
+.section-kicker{margin:0 0 12px;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#68738a}
+.academy-next{background:#f6f1e7;border-top:1px solid #e7ddcb}
+.academy-next h2,.course-section h2{font-family:var(--font-head);font-size:clamp(30px,3.8vw,48px);font-weight:400;line-height:1.15;margin:0 0 32px;color:#1c3061}
+.next-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.next-grid>a{display:flex;flex-direction:column;padding:30px;background:#fffdf9;border:1px solid #e0d6c4;border-radius:20px;text-decoration:none;transition:border-color .2s,transform .2s}
+.next-grid>a:hover{transform:translateY(-4px);border-color:#bca16a}
+.next-grid span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7d6d53}
+.next-grid h3{font-family:var(--font-head);font-size:25px;line-height:1.2;font-weight:400;margin:20px 0 12px}
+.next-grid p{font-size:16px;line-height:1.6;margin:0 0 26px;color:#53607b}
+.next-grid b{font-size:14px;font-weight:500;margin-top:auto;color:#19396c}
+.course-section__heading{padding-top:4px}
+.course-section{padding:56px 0}
+.course-section+.course-section{border-top:1px solid #e4e6ec}
+.page-training #practices{background:#f9f5ed}
+.page-training .card{display:flex;flex-direction:column;overflow:hidden;border-radius:22px}
+.page-training .card__link{align-self:flex-start;margin-top:18px}
+.page-training .order-actions{margin-top:auto;padding-top:22px}
+.page-training .editorial-card__image{aspect-ratio:16/9}
+.page-training #open-programs .grid{grid-template-columns:1fr}
+.page-training #open-programs .card{display:grid;grid-template-columns:minmax(220px,.8fr) 1fr;column-gap:36px;align-items:center}
+.page-training #open-programs .editorial-card__image{grid-column:1;grid-row:1/4;margin:0}
+.page-training #open-programs .card__title,.page-training #open-programs .card__text,.page-training #open-programs .card__link{grid-column:2}
+.page-schedule .schedule-hero{padding-top:64px}
+@media(max-width:1100px){.site-nav a{font-size:14px;padding:10px 12px}}
+@media(max-width:900px){
+  .topbar__inner{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;padding:0 20px}
+  .topbar__left{grid-column:1;grid-row:1;justify-content:flex-start}
+  .brand{grid-column:2;grid-row:1;order:0;flex-basis:auto}
+  .brand img{width:72px;height:72px}
+  .topbar__right{grid-column:3;grid-row:1}
+  .topbar__left .socials{display:none}
+  .btn-account{font-size:11px;padding:12px 15px;text-align:center;white-space:normal;max-width:145px}
+  .site-nav__inner{gap:2px;padding:7px 12px}
+  .site-nav a{font-size:12px;padding:10px;min-height:42px}
+  .next-grid{grid-template-columns:1fr}
+  .next-grid>a{padding:26px}
+  .page-hero .hero__title{font-size:clamp(34px,5.6vw,68px)}
+  .page-about section[id],.page-training section[id],.block[id],.sec[id]{scroll-margin-top:100px}
+}
+@media(max-width:600px){
+  .topbar__inner{padding:0 14px;gap:8px}
+  .brand img{width:62px;height:62px}
+  .btn-menu{font-size:11px;padding:11px 17px}
+  .btn-account{font-size:10px;line-height:1.2;padding:10px 8px;max-width:110px}
+  .site-nav__inner{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding:6px 10px;gap:3px}
+  .site-nav a{font-size:12px;border-radius:12px;min-height:42px;padding:8px 6px}
+  .hero{height:400px}
+  .page-hero{height:340px}
+  .hero__eyebrow{font-size:11px;letter-spacing:.1em;margin-bottom:16px}
+  .hero__subtitle{font-size:21px}
+  .page-hero .hero__subtitle{font-size:16px}
+  .page-home .intro{padding:65px 22px 12px}
+  .about-sections{padding-top:20px;gap:8px}
+  .about-sections a{font-size:12px;padding:9px 12px}
+  .course-section{padding:42px 0}
+  .page-training .grid{grid-template-columns:1fr}
+  .page-training #open-programs .card{display:flex;gap:0;align-items:stretch}
+  .page-training #open-programs .editorial-card__image{margin-bottom:18px}
+  .page-about section[id],.page-training section[id],.block[id],.sec[id]{scroll-margin-top:110px}
+}
+@media(prefers-reduced-motion:reduce){.next-grid>a,.site-nav a{transition:none}}
+/* Team is a primary section alongside study, events and practice. */
+@media(min-width:901px){.site-nav a{font-size:14px;padding-inline:13px}}
+@media(max-width:600px){
+ .site-nav__inner{grid-template-columns:repeat(6,minmax(0,1fr))}
+ .site-nav a{grid-column:span 2}
+ .site-nav a:nth-child(-n+2),.site-nav a:nth-last-child(-n+2){grid-column:span 3}
+ .page-about section[id],.page-training section[id],.block[id],.sec[id]{scroll-margin-top:150px}
+}
+/* Navigation continues the blue header without a separate white panel. */
+.site-nav{background:#142358;border-bottom:1px solid #ffffff24;box-shadow:none}
+.site-nav__inner{gap:18px;padding-block:0}
+.site-nav a,.site-nav a[aria-current],.site-nav a.is-current-section{background:none;border-radius:0;border-bottom:2px solid transparent;color:#e3e9f4;min-height:48px;padding:12px 4px}
+.site-nav a:hover{background:none;color:#f5dab0}
+.site-nav a[aria-current],.site-nav a.is-current-section{color:#f5dab0;border-bottom-color:#d5b478}
+@media(max-width:900px){.site-nav__inner{gap:12px}.site-nav a{font-size:12px}}
+@media(max-width:700px){
+ .site-nav__inner{display:flex;justify-content:flex-start;overflow-x:auto;gap:20px;padding:0 18px;scrollbar-width:thin;scrollbar-color:#8c9cbd #142358}
+ .site-nav a{flex:0 0 auto;white-space:nowrap;min-height:44px;padding:12px 1px;font-size:13px}
+ .page-about section[id],.page-training section[id],.page-team section[id],.block[id],.sec[id]{scroll-margin-top:80px}
+}
+/* Warm, organic light and fireflies gather around the selected section. */
+.site-nav{isolation:isolate;border-bottom:0;background:linear-gradient(180deg,#142358,#17295b)}
+.site-nav__inner{position:relative;z-index:2;gap:10px;padding:4px 20px}
+.site-nav a,.site-nav a[aria-current],.site-nav a.is-current-section{position:relative;border:0;min-height:48px;padding:12px 13px;border-radius:50%;background:none;transition:color .45s,text-shadow .6s}
+.site-nav a:hover{color:#ffe6b2;text-shadow:0 0 15px #e7be7955}
+.site-nav a[aria-current],.site-nav a.is-current-section{color:#fff0ce;text-shadow:0 0 12px #f7ce8a80,0 0 24px #e3af5670}
+.site-nav a:focus-visible{outline:2px solid #f0d7a2;outline-offset:-2px;border-radius:24px}
+.site-nav__light{position:absolute;left:0;top:0;z-index:0;pointer-events:none;border-radius:48% 56% 52% 44% / 57% 43% 55% 48%;background:radial-gradient(ellipse at 50% 56%,#dfba763b 0%,#dfba7624 30%,#b8965b0e 57%,transparent 73%);filter:blur(5px);will-change:transform}
+.site-nav__light:after{content:"";position:absolute;inset:20px 22px;border-radius:50%;box-shadow:0 0 18px #d5af6020,inset 0 0 16px #e9c77b12}
+.site-nav__fireflies{position:absolute;z-index:1;left:0;top:-24px;width:100%;height:calc(100% + 48px);pointer-events:none}
+@media(max-width:1100px){.site-nav__inner{gap:6px}.site-nav a{padding-inline:9px}}
+@media(max-width:700px){
+ .site-nav__inner{gap:12px;padding:4px 18px;scrollbar-width:none}
+ .site-nav__inner::-webkit-scrollbar{display:none}
+ .site-nav a,.site-nav a[aria-current],.site-nav a.is-current-section{min-height:44px;padding:12px 8px;border-radius:50%}
+}
+@media(prefers-reduced-motion:reduce){.site-nav__fireflies{display:none}.site-nav a{transition:none}.site-nav__light{will-change:auto}}

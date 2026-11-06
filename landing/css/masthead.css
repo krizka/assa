@@ -56,3 +56,8 @@
  .schedule-hero .schedule-tabs{gap:8px;margin-top:24px}
  .schedule-hero .schedule-tabs a{padding:10px 15px;font-size:13px}
 }
+
+/* Reserve the space occupied by the CTA below the wave before the next section. */
+.hero:has(> .btn-start){margin-bottom:28px}
+/* Long action labels must wrap within the content column on narrow screens. */
+.cta > .btn-gold,.cta > .btn-outline{max-width:100%;min-width:0;white-space:normal;text-align:center;justify-content:center;overflow-wrap:anywhere}

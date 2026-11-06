@@ -10,9 +10,9 @@ window.ASSA_CONFIG = {
     /* адрес вашей школы в Скул Мастере, например 'https://assa.skoolmaster.ru' */
     base: 'https://academy.alva.club',
     /* вход в личный кабинет ученика */
-    cabinet: 'https://academy.alva.club/',
+    cabinet: 'https://academy.alva.club/login',
     /* страница регистрации / первого шага (кнопка «НАЧАТЬ ОБУЧЕНИЕ») */
-    start: '#start',
+    start: 'https://alva.club/first-step.html#price',
     /* ссылки на конкретные курсы в LMS: ключ = data-lms-course="..." в HTML */
     courses: {
       school9:   '',   // Школа 9 ступеней
@@ -263,19 +263,19 @@ window.ASSA_CONFIG = {
       "firststep.standard": {
           "title": "Программа «Первый шаг»",
           "price": "21 800 ₽",
-          "conditions": "",
+          "conditions": "11 живых встреч в Zoom. Организационная встреча — 10 декабря 2026 года. Дата начала занятий определяется участниками вместе с куратором. Заказ оформляется на вашу электронную почту; вход в кабинет — academy.alva.club/login.",
           "contact": "https://t.me/olemirbraun",
           "details": "first-step.html#price",
-          "paymentUrl": "",
+          "paymentUrl": "https://academy.alva.club/buy/3",
           "bookingUrl": ""
       },
       "firststep.early": {
           "title": "«Первый шаг» — ранняя оплата",
           "price": "15 300 ₽",
-          "conditions": "Если оплата проходит до объявленного организационного собрания и старта программы.",
+          "conditions": "При оплате до организационной встречи 10 декабря 2026 года. Дата начала занятий определяется участниками вместе с куратором.",
           "contact": "https://t.me/olemirbraun",
           "details": "first-step.html#price",
-          "paymentUrl": "",
+          "paymentUrl": "https://academy.alva.club/buy/4",
           "bookingUrl": ""
       },
       "firststep.step1": {

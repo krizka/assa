@@ -37,3 +37,42 @@
 .school-laws span::before{content:'';width:12px;height:12px;flex-shrink:0;border-radius:50%;background:linear-gradient(#fff2d5,#cf9a55);box-shadow:0 0 18px rgba(242,203,156,.5);}
 .school-program{scroll-margin-top:160px;}
 @media(max-width:450px){.school-laws{gap:8px;padding:16px;}.school-laws span{font-size:13px;padding:10px;gap:6px;}}
+
+/* Keep each teaching topic readable as a compact overview. */
+.school-program{padding-block:40px}
+.school-program .pill{margin-bottom:24px}
+.school-program__principles,.school-stage-grid{gap:18px;align-items:start}
+.school-panel__body{padding:20px}
+.school-program h3{font-size:22px;margin-bottom:12px}
+.school-program p,.school-program li{font-size:16px;line-height:1.55}
+.school-program__principles .school-panel>img{height:220px;object-fit:contain;background:#fbf7f0}
+.school-laws{min-height:220px;padding:16px;gap:8px}
+.school-laws span{font-size:13px;padding:9px}
+.school-program__title{font-size:30px;margin:32px 0 20px}
+.school-stage__number{min-width:34px;height:34px;font-size:16px;margin-bottom:12px}
+.school-stage-grid .school-panel>img{height:140px;object-fit:contain;background:#f6f2e9}
+.school-stage-grid .school-panel__body{padding:18px}
+.school-stage-grid h3{font-size:21px}
+.school-stage-grid p{font-size:15px;line-height:1.5;margin-bottom:12px}
+.school-feature{margin:28px 0;padding:24px;gap:28px}
+.school-feature>img{max-height:260px;object-fit:contain}
+@media(min-width:1100px){.school-stage-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:760px){
+ .school-program{padding-block:28px}
+ .school-program__title{font-size:26px;margin-top:28px}
+ .school-feature{padding:20px;gap:20px}
+ .school-program__principles .school-panel>img{height:auto;max-height:240px}
+ .school-stage-grid .school-panel>img{height:160px}
+}
+.school-stage-grid{align-items:stretch}
+/* Illustrations sit within the card frame, with every subject shown in full. */
+.school-stage-grid .school-panel>img{
+ width:calc(100% - 24px);height:auto;aspect-ratio:auto;margin:12px 12px 0;
+ border-radius:14px;background:transparent;object-fit:contain;
+ box-shadow:0 4px 14px #14235812;
+}
+.school-stage-grid .school-panel__body{padding-top:16px}
+
+/* Panoramic artwork supplies the width itself; never letterbox a fixed-height frame. */
+.school-program__principles .school-panel>img{height:auto;max-height:none;object-fit:contain;background:transparent}
+.school-feature>img{max-height:none;height:auto}

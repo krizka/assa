@@ -43,7 +43,7 @@
 .page-training .card{display:flex;flex-direction:column;overflow:hidden;border-radius:22px}
 .page-training .card__link{align-self:flex-start;margin-top:18px}
 .page-training .order-actions{margin-top:auto;padding-top:22px}
-.page-training .editorial-card__image{aspect-ratio:16/9}
+.page-training .editorial-card__image{aspect-ratio:auto}
 .page-training #open-programs .grid{grid-template-columns:1fr}
 .page-training #open-programs .card{display:grid;grid-template-columns:minmax(220px,.8fr) 1fr;column-gap:36px;align-items:center}
 .page-training #open-programs .editorial-card__image{grid-column:1;grid-row:1/4;margin:0}

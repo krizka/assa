@@ -306,8 +306,8 @@ ul{list-style:none;margin:0;padding:0;}
 .hero__subtitle span{display:block;}
 
 @keyframes heroIn{
-  from{opacity:0;transform:translateY(28px);filter:blur(6px);}
-  to{opacity:1;transform:none;filter:blur(0);}
+  from{opacity:0;transform:translate3d(0,12px,0);}
+  to{opacity:1;transform:translate3d(0,0,0);}
 }
 
 .hero__foot{
@@ -562,9 +562,7 @@ ul{list-style:none;margin:0;padding:0;}
   transform:translateY(34px);
   transition:
     opacity .9s cubic-bezier(.22,.68,.28,1) var(--rd,0s),
-    transform 1s cubic-bezier(.22,.68,.28,1) var(--rd,0s),
-    filter .9s ease var(--rd,0s);
-  filter:blur(3px);
+    transform 1s cubic-bezier(.22,.68,.28,1) var(--rd,0s);
 }
 .js .reveal--pill{transform:translateY(-20px) scale(.94);}
 .js .reveal--left{transform:translateX(-52px) scale(.955);}
@@ -1165,3 +1163,6 @@ html,body{overflow-x:clip;}
 /* Preserve the full teacher portrait inside its circular frame. */
 .teacher-portrait{aspect-ratio:1;border-radius:50%;}
 .teacher-portrait img{object-fit:contain;object-position:center;}
+
+/* Content photographs and posters retain the whole frame, including heads and text. */
+.card__img{height:auto;aspect-ratio:auto;object-fit:contain}

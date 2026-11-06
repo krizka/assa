@@ -4,21 +4,10 @@
   var nav = document.querySelector('.site-nav');
   if (!nav) return;
   var rail = nav.querySelector('.site-nav__inner');
-  var links = Array.prototype.slice.call(rail.querySelectorAll('a'));
   var active = rail.querySelector('[aria-current="page"], .is-current-section');
   if (!active) return;
 
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-  var storageKey = 'alva.navigation-light';
-  var fromLink = active;
-  try {
-    var previous = JSON.parse(sessionStorage.getItem(storageKey));
-    sessionStorage.removeItem(storageKey);
-    if (previous && Date.now() - previous.at < 15000) {
-      fromLink = links.filter(function (link) { return link.getAttribute('href') === previous.from; })[0] || active;
-    }
-  } catch (ignore) { /* Navigation also works when browser storage is unavailable. */ }
-
   var halo = document.createElement('span');
   halo.className = 'site-nav__light';
   halo.setAttribute('aria-hidden', 'true');
@@ -33,6 +22,13 @@
   var width = 0, height = 0, target, center, particles = [];
   var raf = 0, last = 0, visible = true;
   var padding = 24;
+  var attractionAt = 0;
+  try { attractionAt = Number(sessionStorage.getItem('alva.orbit-attraction')) || 0; } catch (ignore) {}
+  var motes = [];
+  for (var m = 0; m < 36; m++) {
+    motes.push({u: (m * .61803398875) % 1, v: (m * .381966 + .17) % 1,
+      phase: m * 2.39996, speed: .025 + (m % 3) * .008});
+  }
 
   // Keep the current section visible in the small-screen scrolling navigation.
   if (rail.scrollWidth > rail.clientWidth) {
@@ -62,7 +58,7 @@
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
     target = linkShape(active);
-    center = center || linkShape(fromLink);
+    center = center || Object.assign({}, target);
     if (reduced.matches) center = Object.assign({}, target);
     positionLight();
   }
@@ -82,12 +78,12 @@
   }
 
   measure();
-  var count = width < 700 ? 28 : 44;
+  var count = width < 700 ? 16 : 24;
   for (var i = 0; i < count; i++) {
     var angle = i / count * Math.PI * 2;
-    particles.push({ angle: angle, phase: Math.random() * Math.PI * 2,
-      speed: .12 + Math.random() * .16, radius: .8 + Math.random() * .7,
-      size: 2.7 + Math.random() * 3.2,
+    particles.push({ angle: angle, phase: angle,
+      speed: .32 + (i % 2) * .09, radius: 1 + (i % 2) * .12,
+      lane: i % 2, size: 2.2 + (i % 3) * .45,
       x: center.x + Math.cos(angle) * center.rx * 1.3,
       y: center.y + Math.sin(angle) * center.ry * 1.25 });
   }
@@ -95,27 +91,50 @@
   function frame(time) {
     raf = 0;
     if (document.hidden || !visible || reduced.matches || !ctx || !spriteCtx) return;
-    if (last && time - last < 30) { raf = requestAnimationFrame(frame); return; }
     var dt = last ? Math.min((time - last) / 1000, .08) : .033;
     last = time;
     var follow = 1 - Math.exp(-dt * 7);
     ['x', 'y', 'rx', 'ry'].forEach(function (key) { center[key] += (target[key] - center[key]) * follow; });
-    positionLight();
+    if (Math.abs(target.x - center.x) + Math.abs(target.y - center.y) + Math.abs(target.rx - center.rx) > .02) positionLight();
     ctx.clearRect(0, 0, width, height);
     ctx.globalCompositeOperation = 'lighter';
+    // Two clean elliptical orbits frame the label; no random inward drift.
+    ctx.lineWidth = .65;
+    for (var lane = 0; lane < 2; lane++) {
+      ctx.globalAlpha = lane ? .14 : .24;
+      ctx.strokeStyle = '#f0c774';
+      ctx.beginPath();
+      ctx.ellipse(center.x, center.y, (center.rx + 7) * (1 + lane * .12),
+        center.ry + 3 + lane * 3, 0, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+    var seconds = (performance.timeOrigin + time) / 1000;
+    var age = (Date.now() - attractionAt) / 1000;
+    var capture = age >= 0 && age < 3.2 ? Math.min(1, age / 1.1) : 0;
+    capture = capture * capture * (3 - 2 * capture);
+    var fade = age > 2.4 ? Math.max(0, (3.2 - age) / .8) : 1;
+    motes.forEach(function (m) {
+      var x = ((m.u + seconds * m.speed / 12) % 1) * width;
+      var y = padding + m.v * (height - padding * 2);
+      var dx = (x - center.x) / (center.rx + 85);
+      var dy = (y - center.y) / (center.ry + 30);
+      var nearby = dx * dx + dy * dy < 1;
+      if (nearby && capture) {
+        var angle = m.phase + seconds * .36;
+        x += (center.x + Math.cos(angle) * (center.rx + 7) - x) * capture;
+        y += (center.y + Math.sin(angle) * (center.ry + 3) - y) * capture;
+      }
+      ctx.globalAlpha = .32 * (nearby && capture ? fade : 1);
+      ctx.drawImage(sprite, x - 3, y - 3, 6, 6);
+    });
     particles.forEach(function (p) {
-      p.angle += dt * p.speed;
-      var drift = Math.sin(time * .0007 + p.phase) * 4;
-      var x = center.x + Math.cos(p.angle) * (center.rx + 9 + drift) * p.radius;
-      var y = center.y + Math.sin(p.angle) * (center.ry + 5) + Math.cos(time * .0009 + p.phase) * 3;
-      var attraction = 1 - Math.exp(-dt * 4);
-      p.x += (x - p.x) * attraction;
-      p.y += (y - p.y) * attraction;
-      // Most light stays at the edges, keeping the label clear and readable.
-      var edge = Math.min(1, Math.abs(p.y - center.y) / 13 + Math.abs(p.x - center.x) / (center.rx * 2));
-      ctx.globalAlpha = (.45 + .35 * Math.sin(time * .001 + p.phase)) * edge;
-      var radius = p.size;
-      ctx.drawImage(sprite, p.x - radius, p.y - radius, radius * 2, radius * 2);
+      p.angle = p.phase + (performance.timeOrigin + time) / 1000 * p.speed;
+      var depth = Math.sin(p.angle);
+      var x = center.x + Math.cos(p.angle) * (center.rx + 7) * p.radius;
+      var y = center.y + depth * (center.ry + 3 + p.lane * 3);
+      ctx.globalAlpha = .45 + (depth + 1) * .2;
+      var radius = p.size * (.85 + (depth + 1) * .12);
+      ctx.drawImage(sprite, x - radius, y - radius, radius * 2, radius * 2);
     });
     ctx.globalAlpha = 1;
     raf = requestAnimationFrame(frame);
@@ -132,16 +151,18 @@
     } else if (!document.hidden && visible && ctx && spriteCtx) raf = requestAnimationFrame(frame);
   }
 
-  links.forEach(function (link) {
-    link.addEventListener('click', function (event) {
-      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-      try { sessionStorage.setItem(storageKey, JSON.stringify({ from: active.getAttribute('href'), at: Date.now() })); } catch (ignore) {}
-      target = linkShape(link);
-    });
+  rail.addEventListener('click', function (event) {
+    var link = event.target.closest('a');
+    if (!link || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    attractionAt = Date.now();
+    try { sessionStorage.setItem('alva.orbit-attraction', String(attractionAt)); } catch (ignore) {}
   });
   rail.addEventListener('scroll', function () { target = linkShape(active); if (reduced.matches) sync(); }, { passive: true });
   if ('ResizeObserver' in window) new ResizeObserver(measure).observe(nav);
   else window.addEventListener('resize', measure);
+  if (document.fonts) document.fonts.ready.then(function () {
+    measure(); center = Object.assign({}, target); positionLight();
+  });
   document.addEventListener('visibilitychange', sync);
   if (reduced.addEventListener) reduced.addEventListener('change', sync);
   if ('IntersectionObserver' in window) {

@@ -31,7 +31,7 @@
     dialog.className = 'order-dialog';
     dialog.setAttribute('aria-labelledby', 'order-title');
     dialog.setAttribute('aria-describedby', 'order-note');
-    dialog.innerHTML = '<div class="order-dialog__body"><button class="order-dialog__close" type="button" aria-label="Закрыть окно заявки">×</button><p class="order-dialog__eyebrow"></p><h2 id="order-title"></h2><p class="order-dialog__price"></p><p class="order-dialog__conditions"></p><div class="order-dialog__specialist" hidden><label for="order-specialist">Специалист</label><select id="order-specialist"></select></div><div class="order-dialog__actions"><a class="btn-gold order-dialog__pay" target="_blank" rel="noopener"></a><a class="btn-outline order-dialog__book" target="_blank" rel="noopener"></a></div><p class="order-dialog__note" id="order-note"></p><a class="order-dialog__details">Подробнее об услуге</a></div>';
+    dialog.innerHTML = '<div class="order-dialog__body"><button class="order-dialog__close" type="button" aria-label="Закрыть окно заявки">×</button><p class="order-dialog__eyebrow"></p><h2 id="order-title"></h2><p class="order-dialog__price"></p><p class="order-dialog__conditions"></p><div class="order-dialog__specialist" hidden><label for="order-specialist">Специалист</label><select id="order-specialist"></select></div><div class="order-dialog__actions"><a class="btn-gold order-dialog__pay" target="_blank" rel="noopener"></a><a class="btn-outline order-dialog__book" target="_blank" rel="noopener"></a></div><p class="order-dialog__note" id="order-note"></p><a class="order-dialog__details">Подробнее об услуге</a><p class="order-dialog__account">Уже учитесь? <a href="https://academy.alva.club/login">Войти в личный кабинет</a></p></div>';
     document.body.appendChild(dialog);
     dialog.querySelector('button').addEventListener('click', function () { dialog.close(); });
     dialog.querySelector('.order-dialog__details').addEventListener('click', function () { dialog.close(); });
@@ -54,7 +54,7 @@
     var payLink = dialog.querySelector('.order-dialog__pay');
     payLink.hidden = (!pay && !contact) || !!offer.bookingOnly || slotFirst;
     payLink.href = pay || contact || trigger.href;
-    payLink.textContent = pay ? 'Перейти к оплате' : 'Заказать через куратора';
+    payLink.textContent = pay ? 'Оформить заказ в Академии' : 'Заказать через куратора';
     var bookLink = dialog.querySelector('.order-dialog__book');
     bookLink.hidden = !book && !bookingContact;
     bookLink.href = book || bookingContact || trigger.href;
@@ -71,7 +71,8 @@
       if (pay) note += 'Оплата откроется на отдельной странице, где можно проверить заказ и сумму. ';
       if (book) note += 'Для бронирования откроется страница записи. ';
     }
-    if (!book) note += 'Заявка откроется в Telegram. Чтобы отправить её, нажмите «Отправить» в чате.';
+    if (pay && activeKey.indexOf('firststep.') === 0) note += 'Укажите почту, которую будете использовать для входа в кабинет. Дату начала занятий группа определяет вместе с куратором на организационной встрече 10 декабря. ';
+    if (!book && activeMode === 'booking') note += 'Заявка откроется в Telegram. Чтобы отправить её, нажмите «Отправить» в чате.';
     dialog.querySelector('.order-dialog__note').textContent = note;
   }
   function openOrder(key, mode, source) {

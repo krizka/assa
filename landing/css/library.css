@@ -10,18 +10,33 @@
 @media(prefers-reduced-motion:reduce){.library-paths>a{transition:none}}
 
 /* Library pages have no hero scene: header and navigation stay in document flow. */
-.page-library .topbar,.page-library .topbar.is-stuck{position:relative;inset:auto;background:#142358;padding:12px 0;box-shadow:none}
-.page-library .site-nav{position:relative;inset:auto;top:auto;background:linear-gradient(180deg,#142358,#1a3062);z-index:55;min-height:62px;padding:0 0 6px;overflow:clip}
-.page-library .site-nav__inner{display:flex;flex-wrap:nowrap;justify-content:center;overflow-x:auto;overflow-y:hidden;max-width:1240px;gap:4px;padding:5px 18px;scrollbar-width:thin;scrollbar-color:#b69b6a #142358}
-.page-library .site-nav a{flex:0 0 auto;white-space:nowrap;color:#f0f3fa;font-size:14px;padding:12px 10px;min-height:46px}
-.page-library .site-nav a[aria-current]{color:#ffe7b5}
-.page-library .site-nav a:focus-visible{outline-offset:-3px}
-.page-library .library-intro{position:relative;clear:both;padding-top:56px;color:#242f67}
-.page-library .library-intro h1{color:#242f67}
-.page-library .library-intro .section-kicker{color:#697183}
-@media(max-width:1100px){.page-library .site-nav__inner{justify-content:flex-start}.page-library .site-nav a{font-size:13px}}
-@media(max-width:700px){.page-library .topbar,.page-library .topbar.is-stuck{padding:10px 0}.page-library .site-nav{min-height:58px}.page-library .site-nav__inner{gap:10px;padding:5px 16px}.page-library .site-nav a{padding:11px 8px;min-height:44px}.page-library .library-intro{padding-top:36px}.library-intro h1{font-size:clamp(34px,10.5vw,43px);line-height:1.13}.library-stats{row-gap:14px}}
+.page-library:not(.page-library-home) .topbar,.page-library:not(.page-library-home) .topbar.is-stuck{position:relative;inset:auto;background:#142358;padding:12px 0;box-shadow:none}
+.page-library:not(.page-library-home) .site-nav{position:relative;inset:auto;top:auto;background:linear-gradient(180deg,#142358,#1a3062);z-index:55;min-height:62px;padding:0 0 6px;overflow:clip}
+.page-library:not(.page-library-home) .site-nav__inner{display:flex;flex-wrap:nowrap;justify-content:center;overflow-x:auto;overflow-y:hidden;max-width:1240px;gap:4px;padding:5px 18px;scrollbar-width:thin;scrollbar-color:#b69b6a #142358}
+.page-library:not(.page-library-home) .site-nav a{flex:0 0 auto;white-space:nowrap;color:#f0f3fa;font-size:14px;padding:12px 10px;min-height:46px}
+.page-library:not(.page-library-home) .site-nav a[aria-current]{color:#ffe7b5}
+.page-library:not(.page-library-home) .site-nav a:focus-visible{outline-offset:-3px}
+.page-library:not(.page-library-home) .library-intro{position:relative;clear:both;padding-top:56px;color:#242f67}
+.page-library:not(.page-library-home) .library-intro h1{color:#242f67}
+.page-library:not(.page-library-home) .library-intro .section-kicker{color:#697183}
+@media(max-width:1100px){.page-library:not(.page-library-home) .site-nav__inner{justify-content:flex-start}.page-library:not(.page-library-home) .site-nav a{font-size:13px}}
+@media(max-width:700px){.page-library:not(.page-library-home) .topbar,.page-library:not(.page-library-home) .topbar.is-stuck{padding:10px 0}.page-library:not(.page-library-home) .site-nav{min-height:58px}.page-library:not(.page-library-home) .site-nav__inner{gap:10px;padding:5px 16px}.page-library:not(.page-library-home) .site-nav a{padding:11px 8px;min-height:44px}.page-library:not(.page-library-home) .library-intro{padding-top:36px}.library-intro h1{font-size:clamp(34px,10.5vw,43px);line-height:1.13}.library-stats{row-gap:14px}}
 
 /* Library information hierarchy: directory, sections, reading. */
 .library-directory-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 44px}.library-directory-grid>div{border-top:1px solid #d7deea;padding-top:16px}.library-directory-grid h3{font-size:23px;line-height:1.4;margin:0 0 14px}.library-directory-grid ul,.library-tree ul{list-style:none;padding:0;margin:0}.library-directory-grid li{margin:12px 0;line-height:1.6}.library-directory a,.library-tree a,.library-breadcrumbs a,.library-adjacent a{color:#263e6d;text-underline-offset:4px}.library-breadcrumbs{display:flex;flex-wrap:wrap;gap:8px;font-size:14px;line-height:1.6;margin-bottom:20px}.library-reader-layout{display:grid;grid-template-columns:270px minmax(0,820px);gap:40px;align-items:start}.library-reader-layout .library-full{max-width:100%;min-width:0;margin:0}.library-tree{position:sticky;top:24px;background:#f7f7f2;border:1px solid #dfe4e9;border-radius:16px;padding:20px;max-height:calc(100vh - 48px);overflow:auto}.library-tree h2{font-size:19px;margin:0 0 16px}.library-tree details{border-top:1px solid #d8dfe8;padding:12px 0}.library-tree summary{cursor:pointer;font-size:15px;line-height:1.5}.library-tree summary small{color:#697285}.library-tree li{margin:12px 0;font-size:14px;line-height:1.55}.library-tree [aria-current]{font-weight:bold;color:#80602d;text-decoration:none}.library-tree .library-section-all{font-size:13px;display:block;margin-top:16px}.library-adjacent{display:grid;gap:14px;margin:36px 0;padding:22px;background:#f8f3e8;border-radius:16px}.library-adjacent a{display:grid;gap:6px;line-height:1.5}.library-adjacent small{color:#697285}.library-tree a:focus-visible,.library-directory a:focus-visible{outline:2px solid #96743e;outline-offset:3px}
 @media(max-width:900px){.library-reader-layout{grid-template-columns:1fr}.library-tree{position:relative;top:auto;max-height:none}.library-tree details:not([open]){padding:10px 0}.library-directory-grid{grid-template-columns:1fr}}
+
+/* The library landing shares the Academy scene; reading pages keep their calm header. */
+.page-library-home .library-hero .hero__title{font-size:clamp(32px,4.8vw,66px);line-height:1.12}
+.page-library-home .library-hero .hero__subtitle{max-width:800px;font-size:clamp(16px,1.8vw,23px)}
+.library-summary{padding:42px 0 8px;text-align:center;color:#253765}
+.library-summary>.wrap>p{max-width:760px;margin:0 auto;font-size:18px;line-height:1.75}
+.library-summary .library-stats{justify-content:center;margin-top:24px;gap:20px 44px}
+.page-library-home .library-directory{padding-top:36px}
+@media(max-width:700px){
+ .page-library-home .library-hero .hero__title{font-size:clamp(28px,7.8vw,46px);letter-spacing:.02em}
+ .page-library-home .library-hero .hero__subtitle{font-size:16px;max-width:90%}
+ .library-summary{padding:40px 0 8px}
+ .library-summary>.wrap>p{font-size:16px}
+ .library-summary .library-stats{gap:12px 20px}
+}

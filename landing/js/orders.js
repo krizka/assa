@@ -63,7 +63,7 @@
     dialog.querySelector('.order-dialog__eyebrow').textContent = offer.bookingOnly ? 'Запись без оплаты' : (slotFirst ? 'Время → оплата → подтверждение' : (activeMode === 'booking' ? 'Заявка на бронирование' : 'Заказ и оплата'));
     var note;
     if (offer.bookingOnly) {
-      note = 'Первичная работа без оплаты. Время встречи согласовывается со специалистом. ';
+      note = offer.organizational ? 'Выберите куратора и согласуйте время консультации по работе Академии и системе обучения. ' : 'Первичная работа без оплаты. Время встречи согласовывается с Учителем Ириной. ';
     } else if (slotFirst) {
       note = book ? 'Сначала выберите свободное время. Запись подтверждается после успешной оплаты в школе. ' : 'Часы приёма пока не опубликованы. Сначала согласуйте подходящее время; запись на слот подтверждается после оплаты. ';
     } else {
@@ -80,14 +80,15 @@
     if (!offer || typeof HTMLDialogElement === 'undefined') return false;
     if (!dialog) makeDialog();
     trigger = source; activeKey = key; activeMode = mode;
-    dialog.querySelector('h2').textContent = offer.title;
-    dialog.querySelector('.order-dialog__price').textContent = offer.price || 'Стоимость уточняется у куратора';
+    dialog.querySelector('h2').textContent = offer.title + (key.indexOf('consultation.') === 0 ? ' — Учитель Ирина' : '');
+    dialog.querySelector('.order-dialog__price').textContent = offer.price || 'Стоимость уточняется';
     dialog.querySelector('.order-dialog__conditions').textContent = offer.conditions || '';
     var select = dialog.querySelector('select'); select.textContent = '';
     var available = specialists.filter(function (p) { return (p.offers || []).indexOf(key) !== -1; });
-    var box = dialog.querySelector('.order-dialog__specialist'); box.hidden = !available.length;
+    var box = dialog.querySelector('.order-dialog__specialist'); box.hidden = available.length < 2;
+    box.querySelector('label').textContent = offer.organizational ? 'Куратор' : 'Специалист';
     if (available.length > 1) {
-      var placeholder = document.createElement('option'); placeholder.value = ''; placeholder.textContent = 'Помогите выбрать специалиста'; select.appendChild(placeholder);
+      var placeholder = document.createElement('option'); placeholder.value = ''; placeholder.textContent = 'Помогите выбрать куратора'; select.appendChild(placeholder);
     }
     available.forEach(function (p) { var option = document.createElement('option'); option.value = p.id; option.textContent = p.name; select.appendChild(option); });
     var preferred = source.getAttribute('data-specialist');

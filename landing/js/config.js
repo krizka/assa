@@ -305,11 +305,22 @@ window.ASSA_CONFIG = {
           "paymentUrl": "",
           "bookingUrl": ""
       },
+      "academy.guidance": {
+          "title": "Консультация по работе Академии и системе обучения",
+          "price": "Условия уточняются у куратора",
+          "conditions": "Кураторы отвечают на вопросы о работе Академии, программах, порядке обучения и личном кабинете. Для индивидуальной консультации запишитесь к Учителю Ирине.",
+          "contact": "https://t.me/olemirbraun",
+          "details": "contacts.html#academy-guidance",
+          "paymentUrl": "",
+          "bookingUrl": "",
+          "bookingOnly": true,
+          "organizational": true
+},
       "consultation.first": {
           "title": "Первичные консультации для новичков",
           "price": "7 500 ₽ / час",
-          "conditions": "На первой консультации обсуждаем ваш запрос и методы работы. Стоимость — 7 500 рублей за час. Условия оплаты и рассрочки согласуйте с куратором. Выбранное время подтверждается после оплаты.",
-          "contact": "https://t.me/olemirbraun",
+          "conditions": "На первой консультации обсуждаем ваш запрос и методы работы. Стоимость — 7 500 рублей за час. Условия оплаты и рассрочки согласуйте с Учителем Ириной. Выбранное время подтверждается после оплаты.",
+          "contact": "https://t.me/Irina_Savelyeva",
           "details": "practice.html#consultation-prices",
           "paymentUrl": "",
           "bookingUrl": ""
@@ -318,7 +329,7 @@ window.ASSA_CONFIG = {
           "title": "Люди в тяжелом состоянии",
           "price": "без оплаты",
           "conditions": "При тяжелых заболеваниях и опасных обстоятельствах первичная работа проводится без оплаты. После стабилизации человек сам принимает решение о дальнейшей работе.",
-          "contact": "https://t.me/olemirbraun",
+          "contact": "https://t.me/Irina_Savelyeva",
           "details": "practice.html#consultation-prices",
           "paymentUrl": "",
           "bookingUrl": "",
@@ -327,8 +338,8 @@ window.ASSA_CONFIG = {
       "consultation.student": {
           "title": "Консультации для учеников Академии",
           "price": "5 000 ₽ / час",
-          "conditions": "Для обучающихся в программах, курсах и школах Академии. Условия оплаты и рассрочки согласуйте с куратором. Выбранное время подтверждается после оплаты.",
-          "contact": "https://t.me/olemirbraun",
+          "conditions": "Для обучающихся в программах, курсах и школах Академии. Условия оплаты и рассрочки согласуйте с Учителем Ириной. Выбранное время подтверждается после оплаты.",
+          "contact": "https://t.me/Irina_Savelyeva",
           "details": "practice.html#consultation-prices",
           "paymentUrl": "",
           "bookingUrl": ""
@@ -336,8 +347,8 @@ window.ASSA_CONFIG = {
       "consultation.family": {
           "title": "Семейные консультации",
           "price": "5 000 ₽ / час",
-          "conditions": " Условия оплаты и рассрочки согласуйте с куратором. Выбранное время подтверждается после оплаты.",
-          "contact": "https://t.me/olemirbraun",
+          "conditions": " Условия оплаты и рассрочки согласуйте с Учителем Ириной. Выбранное время подтверждается после оплаты.",
+          "contact": "https://t.me/Irina_Savelyeva",
           "details": "practice.html#consultation-prices",
           "paymentUrl": "",
           "bookingUrl": ""
@@ -345,8 +356,8 @@ window.ASSA_CONFIG = {
       "consultation.master": {
           "title": "Мастерское обучение",
           "price": "индивидуально",
-          "conditions": "Согласовывается индивидуально. Индивидуальное обучение неэффективно и может усилить Эго – мы рекомендуем обучаться в группах: Школа 9 ступеней, программа «Первый шаг», курсы и Круги. Условия оплаты и рассрочки согласуйте с куратором. Выбранное время подтверждается после оплаты.",
-          "contact": "https://t.me/olemirbraun",
+          "conditions": "Согласовывается индивидуально. Индивидуальное обучение неэффективно и может усилить Эго – мы рекомендуем обучаться в группах: Школа 9 ступеней, программа «Первый шаг», курсы и Круги. Условия оплаты и рассрочки согласуйте с Учителем Ириной. Выбранное время подтверждается после оплаты.",
+          "contact": "https://t.me/Irina_Savelyeva",
           "details": "practice.html#consultation-prices",
           "paymentUrl": "",
           "bookingUrl": ""
@@ -354,7 +365,7 @@ window.ASSA_CONFIG = {
       "consultation.teacher": {
           "title": "Работа с основателем Академии (Учителем)",
           "price": "10 000 ₽ / час",
-          "conditions": "Абсолютное условие – НЕОБХОДИМОСТЬ. Стоимость для учеников Академии. С новичками Учитель не работает: сначала нужно пройти обучение и индивидуальные консультации с кураторами. Условия оплаты и рассрочки согласуйте с куратором. Выбранное время подтверждается после оплаты.",
+          "conditions": "Абсолютное условие – НЕОБХОДИМОСТЬ. Стоимость для учеников Академии. Формат работы и возможность встречи согласовываются с Учителем Ириной. Условия оплаты и рассрочки согласуйте с Учителем Ириной. Выбранное время подтверждается после оплаты.",
           "contact": "https://t.me/Irina_Savelyeva",
           "details": "practice.html#consultation-prices",
           "paymentUrl": "",
@@ -398,74 +409,65 @@ window.ASSA_CONFIG = {
       "bookingFlow": "slot-first",
       "events": [],
       "specialists": [
-          {
-              "id": "irina",
-              "name": "Ирина Владимировна Савельева",
-              "role": "Учитель Академии",
-              "image": "images/generated/teacher-irina-portrait.webp",
-              "contact": "https://t.me/Irina_Savelyeva",
-              "bookingUrl": "",
-              "offers": [
-                  "consultation.teacher"
-              ]
-          },
-          {
-              "id": "ekaterina",
-              "name": "Екатерина Хмелева",
-              "role": "Куратор · директор",
-              "image": "images/team/ekaterina-khmeleva.webp",
-              "contact": "https://t.me/Katyakh2023",
-              "bookingUrl": "",
-              "offers": [
-                  "consultation.first",
-                  "consultation.student",
-                  "consultation.family",
-                  "consultation.master",
-                  "consultation.support"
-              ]
-          },
-          {
-              "id": "olga",
-              "name": "Ольга Мир",
-              "role": "Куратор Школы · эвотренер «Первого шага»",
-              "image": "images/team/olga-mir.webp",
-              "contact": "https://t.me/olemirbraun",
-              "bookingUrl": "",
-              "offers": [
-                  "consultation.first",
-                  "consultation.student",
-                  "consultation.family",
-                  "consultation.master",
-                  "consultation.support"
-              ]
-          },
-          {
-              "id": "eduard",
-              "name": "Эдуард Кондратьев",
-              "role": "Бизнес-консультант · куратор Школы",
-              "image": "images/team/eduard-kondratyev.webp",
-              "contact": "https://t.me/KondratyevEV",
-              "bookingUrl": "",
-              "offers": [
-                  "consultation.first",
-                  "consultation.student",
-                  "consultation.family",
-                  "consultation.master",
-                  "consultation.support"
-              ]
-          },
-          {
-              "id": "yoga",
-              "name": "Екатерина Ивановская",
-              "role": "Тренер Энийоги",
-              "image": "images/team/ekaterina-ivanovskaya.jpg",
-              "contact": "https://t.me/katyagalani",
-              "bookingUrl": "",
-              "offers": [
-                  "eniyoga.class"
-              ]
-          }
-      ]
+    {
+        "id": "irina",
+        "name": "Ирина Владимировна Савельева",
+        "role": "Учитель Академии",
+        "image": "images/generated/teacher-irina-portrait.webp",
+        "contact": "https://t.me/Irina_Savelyeva",
+        "bookingUrl": "",
+        "offers": [
+            "consultation.first",
+            "consultation.support",
+            "consultation.student",
+            "consultation.family",
+            "consultation.master",
+            "consultation.teacher"
+        ]
+    },
+    {
+        "id": "ekaterina",
+        "name": "Екатерина Хмелева",
+        "role": "Куратор · директор",
+        "image": "images/team/ekaterina-khmeleva.webp",
+        "contact": "https://t.me/Katyakh2023",
+        "bookingUrl": "",
+        "offers": [
+            "academy.guidance"
+        ]
+    },
+    {
+        "id": "olga",
+        "name": "Ольга Мир",
+        "role": "Куратор Школы · эвотренер «Первого шага»",
+        "image": "images/team/olga-mir.webp",
+        "contact": "https://t.me/olemirbraun",
+        "bookingUrl": "",
+        "offers": [
+            "academy.guidance"
+        ]
+    },
+    {
+        "id": "eduard",
+        "name": "Эдуард Кондратьев",
+        "role": "Бизнес-консультант · куратор Школы",
+        "image": "images/team/eduard-kondratyev.webp",
+        "contact": "https://t.me/KondratyevEV",
+        "bookingUrl": "",
+        "offers": [
+            "academy.guidance"
+        ]
+    },
+    {
+        "id": "yoga",
+        "name": "Екатерина Ивановская",
+        "role": "Тренер Энийоги",
+        "image": "images/team/ekaterina-ivanovskaya.jpg",
+        "contact": "https://t.me/katyagalani",
+        "bookingUrl": "",
+        "offers": []
+    }
+]
   },
 
   /* --- телефоны (показываются в шапке и в меню) --- */

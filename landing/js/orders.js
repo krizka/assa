@@ -80,12 +80,12 @@
     if (!offer || typeof HTMLDialogElement === 'undefined') return false;
     if (!dialog) makeDialog();
     trigger = source; activeKey = key; activeMode = mode;
-    dialog.querySelector('h2').textContent = offer.title + (key.indexOf('consultation.') === 0 ? ' — Учитель Ирина' : '');
+    dialog.querySelector('h2').textContent = offer.title;
     dialog.querySelector('.order-dialog__price').textContent = offer.price || 'Стоимость уточняется';
     dialog.querySelector('.order-dialog__conditions').textContent = offer.conditions || '';
     var select = dialog.querySelector('select'); select.textContent = '';
     var available = specialists.filter(function (p) { return (p.offers || []).indexOf(key) !== -1; });
-    var box = dialog.querySelector('.order-dialog__specialist'); box.hidden = available.length < 2;
+    var box = dialog.querySelector('.order-dialog__specialist'); box.hidden = !available.length;
     box.querySelector('label').textContent = offer.organizational ? 'Куратор' : 'Специалист';
     if (available.length > 1) {
       var placeholder = document.createElement('option'); placeholder.value = ''; placeholder.textContent = 'Помогите выбрать куратора'; select.appendChild(placeholder);

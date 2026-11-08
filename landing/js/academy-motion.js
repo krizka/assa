@@ -24,8 +24,26 @@ document.querySelectorAll('[data-history-scene]').forEach(function (scene) {
     bird.phase = i * 2.1;
     return bird;
   });
+  var page = scene.querySelector('.history-page');
+  var pageShapes = [
+    [221,551,284,531,336,553,420,646,354,637,300,662],
+    [221,551,281,467,320,478,350,596,321,607,300,662],
+    [221,551,185,461,171,501,217,606,270,616,300,662],
+    [221,551,151,527,83,540,169,651,240,636,300,662]
+  ];
+  var pageStops = [0.18, 0.38, 0.57, 0.77];
   var elapsed = 0, previous = null, frame = null, visible = false, paused = false;
   function paint() {
+    if (page) {
+      var phase = (elapsed % 7) / 7;
+      var segment = 0;
+      while (segment < 2 && phase > pageStops[segment + 1]) segment++;
+      var progress = Math.max(0, Math.min(1, (phase - pageStops[segment]) / (pageStops[segment + 1] - pageStops[segment])));
+      progress = progress * progress * (3 - 2 * progress);
+      var shape = pageShapes[segment].map(function (value, i) { return value + (pageShapes[segment + 1][i] - value) * progress; });
+      page.setAttribute('d', 'M' + shape[0] + ' ' + shape[1] + ' Q' + shape.slice(2, 6).join(' ') + ' L' + shape.slice(6, 8).join(' ') + ' Q' + shape.slice(8).join(' ') + 'Z');
+      page.style.opacity = String(Math.max(0, Math.min(1, (phase - 0.12) / 0.06, (0.85 - phase) / 0.08)));
+    }
     birds.forEach(function (bird, i) {
       var fraction = (elapsed / bird.duration + bird.offset) % 1;
       var distance = fraction * bird.length;

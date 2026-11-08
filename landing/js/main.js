@@ -128,7 +128,7 @@
      CSS-анимации волн жили своим циклом, и кадры canvas и волн не совпадали,
      что прибавляло работы композитору/GPU. На 120 Гц — каждый второй vsync.
      30 fps давали ~1.5% CPU, но движение рвалось.
-     Анимация идёт, только когда вкладка видна и окно в фокусе. Подписчики
+     Анимация идёт, только когда вкладка видна. Подписчики
      получают t — время анимации без пауз (мс), поэтому после паузы всё
      продолжается с того же места, без скачка.
      dt — в «кадрах 60 fps»: скорости частиц заданы в px за такой кадр.
@@ -138,7 +138,6 @@
 
   var clock = (function () {
     var subs = [], raf = null, last = 0, t = 0;
-    var focused = document.hasFocus();
 
     function tick(now) {
       raf = requestAnimationFrame(tick);
@@ -152,7 +151,7 @@
     }
 
     function sync() {
-      var run = subs.length > 0 && focused && !document.hidden;
+      var run = subs.length > 0 && !document.hidden;
       if (run && !raf) {
         last = performance.now() - FRAME_MS;
         raf = requestAnimationFrame(tick);
@@ -162,8 +161,6 @@
       }
     }
     document.addEventListener('visibilitychange', sync);
-    window.addEventListener('focus', function () { focused = true; sync(); });
-    window.addEventListener('blur', function () { focused = false; sync(); });
 
     return {
       time: function () { return t; },
